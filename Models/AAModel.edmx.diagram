@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="73abb6683f8942e0a4686d33cd258bb6" Name="Diagram1" ZoomLevel="68">
+        <EntityTypeShape EntityType="agroalimModel.administradores" Width="1.5" PointX="14.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_certificaciones" Width="1.5" PointX="19.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_detalle_ventas" Width="1.5" PointX="5.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_industry_levers" Width="1.5" PointX="21.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_nivel_ventas" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_org_empresarial" Width="1.5" PointX="10.625" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_paises" Width="1.5" PointX="21.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_partnership" Width="1.5" PointX="19.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_posicionamiento" Width="1.5" PointX="2.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_puestos" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_sectores" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_sectores_atendidos" Width="1.5" PointX="21.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_sedes" Width="1.5" PointX="11.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_softwares" Width="1.5" PointX="16.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_tamano_empresas" Width="1.5" PointX="0.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_tecnologias" Width="1.5" PointX="13.625" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_tipo_empresas" Width="1.5" PointX="3.125" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_tipo_prod" Width="1.5" PointX="2.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.cat_value_drivers" Width="1.5" PointX="21.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.certificaciones_empresas" Width="1.5" PointX="19.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.coberturas" Width="1.5" PointX="4.125" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.contactos" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.direcciones" Width="1.5" PointX="9.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.emp_sede" Width="1.5" PointX="6.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.empresas" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.encuestas" Width="1.5" PointX="11.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.estatificacion_empresa" Width="1.5" PointX="0.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.marca_nivel" Width="1.5" PointX="16.625" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.mex_estados" Width="1.5" PointX="16.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.municipios" Width="1.5" PointX="19.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.opciones" Width="1.5" PointX="6.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.orgs_emp" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.preguntas" Width="1.5" PointX="9.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.prod_vald_ind" Width="1.5" PointX="21.625" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.productos" Width="1.5" PointX="0.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.respuestas" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.software_empresa" Width="1.5" PointX="14.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.sysdiagrams" Width="1.5" PointX="21.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.tecnologia_producto" Width="1.5" PointX="10.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="agroalimModel.solicitudes" Width="1.5" PointX="16.5" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="agroalimModel.fk_id_administrador" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_certemp_cert" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_estatemp_dv" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_id_value_drivers" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_estatemp_nv" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_orgsemp_org" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_marniv" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_prod_pos" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_puesto_co" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_estatemp_sec" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="agroalimModel.fk_empdir_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_swemp_sw" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_estatemp_tam" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_tecprod_tec" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_estatemp_te" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="agroalimModel.fk_prod_org" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_certemp_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_cobertura_em" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.FK_con_sol" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_empresa_co" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_id_contacto" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.488523002674345" PointY="7.0000000000000018" />
+          <ConnectorPoint PointX="6.488523002674345" PointY="6.85597492713379" />
+          <ConnectorPoint PointX="6.496340569760009" PointY="6.85597492713379" />
+          <ConnectorPoint PointX="6.496340569760009" PointY="2.4693524438474137" />
+          <ConnectorPoint PointX="5.625" PointY="2.4693524438474137" />
+        </AssociationConnector>
+        <AssociationConnector Association="agroalimModel.fk_empdir_dir" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_empdir_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.FK_emp_sol" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_estatificacion_em" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="agroalimModel.fk_id_empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_orgsemp_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_prod_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_swemp_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_id_encuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_prod_mnp" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_municipios_es" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_id_opcion" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_id_pregunta" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.FK_prod" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.FK_prod_vald_ind" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.FK_prod_sol" ManuallyRouted="false" />
+        <AssociationConnector Association="agroalimModel.fk_tecprod_prod" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2" PointY="11.470231769997456" />
+          <ConnectorPoint PointX="10.40625" PointY="11.470231769997456" />
+          <ConnectorPoint PointX="10.40625" PointY="13.375" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

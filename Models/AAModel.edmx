@@ -1,0 +1,2539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="agroalimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="administradores">
+          <Key>
+            <PropertyRef Name="id_administrador" />
+          </Key>
+          <Property Name="id_administrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="150" />
+          <Property Name="apellidos" Type="varchar" MaxLength="150" />
+          <Property Name="empresa" Type="varchar" MaxLength="100" />
+          <Property Name="usuario" Type="varchar" MaxLength="80" />
+          <Property Name="contrasena" Type="varchar" MaxLength="80" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_certificaciones">
+          <Key>
+            <PropertyRef Name="id_cat_cert" />
+          </Key>
+          <Property Name="id_cat_cert" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_cert" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_detalle_ventas">
+          <Key>
+            <PropertyRef Name="id_det_ven" />
+          </Key>
+          <Property Name="id_det_ven" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tamano_detven" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_industry_levers">
+          <Key>
+            <PropertyRef Name="id_industry_levers" />
+          </Key>
+          <Property Name="fk_id_value_drivers" Type="int" />
+          <Property Name="id_industry_levers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="industry_levers" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_nivel_ventas">
+          <Key>
+            <PropertyRef Name="id_niv_ven" />
+          </Key>
+          <Property Name="id_niv_ven" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nivel_ventas" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_org_empresarial">
+          <Key>
+            <PropertyRef Name="id_cat_oe" />
+          </Key>
+          <Property Name="id_cat_oe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_orgemp" Type="varchar" MaxLength="80" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_paises">
+          <Key>
+            <PropertyRef Name="id_pais" />
+          </Key>
+          <Property Name="id_pais" Type="int" Nullable="false" />
+          <Property Name="cod_pais" Type="char" MaxLength="2" />
+          <Property Name="nombre_pais" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_partnership">
+          <Key>
+            <PropertyRef Name="id_cat_part" />
+          </Key>
+          <Property Name="id_cat_part" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nivel_partnership" Type="varchar" MaxLength="80" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_posicionamiento">
+          <Key>
+            <PropertyRef Name="id_cat_pos" />
+          </Key>
+          <Property Name="id_cat_pos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="posicionamiento" Type="varchar" MaxLength="80" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_puestos">
+          <Key>
+            <PropertyRef Name="id_puesto" />
+          </Key>
+          <Property Name="id_puesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_puesto" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_sectores">
+          <Key>
+            <PropertyRef Name="id_cat_sec" />
+          </Key>
+          <Property Name="id_cat_sec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_sector" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_sectores_atendidos">
+          <Key>
+            <PropertyRef Name="id_cat_sec" />
+          </Key>
+          <Property Name="id_cat_sec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_sector" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_sedes">
+          <Key>
+            <PropertyRef Name="id_cat_sede" />
+          </Key>
+          <Property Name="id_cat_sede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_sede" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_softwares">
+          <Key>
+            <PropertyRef Name="id_cat_sw" />
+          </Key>
+          <Property Name="id_cat_sw" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_sw" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_tamano_empresas">
+          <Key>
+            <PropertyRef Name="id_tam_emp" />
+          </Key>
+          <Property Name="id_tam_emp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tamano_empresa" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_tecnologias">
+          <Key>
+            <PropertyRef Name="id_cat_tec" />
+          </Key>
+          <Property Name="id_cat_tec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_tecnologia" Type="varchar" MaxLength="80" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_tipo_empresas">
+          <Key>
+            <PropertyRef Name="id_cat_te" />
+          </Key>
+          <Property Name="id_cat_te" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_tipo" Type="varchar" MaxLength="80" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_tipo_prod">
+          <Key>
+            <PropertyRef Name="id_tipo_prod" />
+          </Key>
+          <Property Name="id_tipo_prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_producto" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="cat_value_drivers">
+          <Key>
+            <PropertyRef Name="id_value_divers" />
+          </Key>
+          <Property Name="id_value_divers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="value_driver" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="certificaciones_empresas">
+          <Key>
+            <PropertyRef Name="id_cert_emp" />
+          </Key>
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="fk_id_cert" Type="int" />
+          <Property Name="id_cert_emp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coberturas">
+          <Key>
+            <PropertyRef Name="id_cobertura" />
+          </Key>
+          <Property Name="id_cobertura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nacional" Type="varchar" MaxLength="500" />
+          <Property Name="internacional" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="contactos">
+          <Key>
+            <PropertyRef Name="id_contacto" />
+          </Key>
+          <Property Name="fk_id_puesto" Type="int" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="30" />
+          <Property Name="telefono" Type="varchar" MaxLength="30" />
+          <Property Name="nombre_usuario" Type="varchar" MaxLength="30" />
+          <Property Name="contrasena" Type="varchar" MaxLength="12" />
+          <Property Name="tipo_usuario" Type="varchar" MaxLength="12" />
+          <Property Name="id_contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estatus_registro" Type="int" />
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="direcciones">
+          <Key>
+            <PropertyRef Name="id_direccion" />
+          </Key>
+          <Property Name="id_direccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="150" />
+          <Property Name="municipio" Type="varchar" MaxLength="30" />
+          <Property Name="estado" Type="varchar" MaxLength="30" />
+          <Property Name="pais" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="emp_sede">
+          <Key>
+            <PropertyRef Name="id_emp_dir" />
+          </Key>
+          <Property Name="fk_id_direccion" Type="int" />
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="fk_id_tipo_sede" Type="int" />
+          <Property Name="id_emp_dir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empresas">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="fk_id_cobertura" Type="int" />
+          <Property Name="fk_id_estat_empresa" Type="int" />
+          <Property Name="id_empresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="razon_social" Type="varchar" MaxLength="150" />
+          <Property Name="rfc" Type="varchar" MaxLength="13" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" />
+          <Property Name="web" Type="varchar" MaxLength="200" />
+          <Property Name="fecha_creacion" Type="date" />
+          <Property Name="linkedin" Type="varchar" MaxLength="100" />
+          <Property Name="facebook" Type="varchar" MaxLength="100" />
+          <Property Name="twitter" Type="varchar" MaxLength="100" />
+          <Property Name="instagram" Type="varchar" MaxLength="100" />
+          <Property Name="descripcion_oferta_valor" Type="varchar" MaxLength="500" />
+          <Property Name="sectores_atendidos" Type="varchar" MaxLength="250" />
+          <Property Name="principales_clientes" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="encuestas">
+          <Key>
+            <PropertyRef Name="id_encuesta" />
+          </Key>
+          <Property Name="id_encuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="fecha_vigencia" Type="datetime" />
+          <Property Name="fecha_registro" Type="datetime" />
+          <Property Name="estatus" Type="int" />
+          <Property Name="fk_id_administrador" Type="int" />
+        </EntityType>
+        <EntityType Name="estatificacion_empresa">
+          <Key>
+            <PropertyRef Name="id_estat_empresa" />
+          </Key>
+          <Property Name="fk_id_tamano" Type="int" />
+          <Property Name="fk_id_nivel_ventas" Type="int" />
+          <Property Name="fk_id_detalle_ventas" Type="int" />
+          <Property Name="fk_id_sector" Type="int" />
+          <Property Name="fk_id_tipo_empresa" Type="int" />
+          <Property Name="id_estat_empresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="marca_nivel">
+          <Key>
+            <PropertyRef Name="id_mar_niv" />
+          </Key>
+          <Property Name="fk_id_nivel" Type="int" />
+          <Property Name="id_mar_niv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="mex_estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="nombre_estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="municipios">
+          <Key>
+            <PropertyRef Name="id_municipio" />
+          </Key>
+          <Property Name="id_municipio" Type="int" Nullable="false" />
+          <Property Name="nombre_municipio" Type="varchar" MaxLength="50" />
+          <Property Name="fk_id_estado" Type="int" />
+        </EntityType>
+        <EntityType Name="opciones">
+          <Key>
+            <PropertyRef Name="id_opcion" />
+          </Key>
+          <Property Name="id_opcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="texto" Type="varchar" MaxLength="300" />
+          <Property Name="valor" Type="int" />
+          <Property Name="fk_id_pregunta" Type="int" />
+        </EntityType>
+        <EntityType Name="orgs_emp">
+          <Key>
+            <PropertyRef Name="id_orgs_emp" />
+          </Key>
+          <Property Name="fk_id_org" Type="int" />
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="id_orgs_emp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="preguntas">
+          <Key>
+            <PropertyRef Name="id_pregunta" />
+          </Key>
+          <Property Name="id_pregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pregunta" Type="varchar" MaxLength="300" />
+          <Property Name="fecha_registro" Type="datetime" />
+          <Property Name="estatus" Type="int" />
+          <Property Name="fk_id_encuesta" Type="int" />
+        </EntityType>
+        <EntityType Name="prod_vald_ind">
+          <Key>
+            <PropertyRef Name="id_prod_vald_ind" />
+          </Key>
+          <Property Name="id_prod_vald_ind" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_producto" Type="int" />
+          <Property Name="value_driver" Type="varchar" MaxLength="100" />
+          <Property Name="industry_levers" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="productos">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="fk_id_posicionamiento" Type="int" />
+          <Property Name="fk_id_marca_nivelp" Type="int" />
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="fk_id_origen" Type="int" />
+          <Property Name="fk_id_tecnologia" Type="int" />
+          <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="fk_id_value_drivers" Type="int" />
+          <Property Name="fk_industry_levers" Type="int" />
+          <Property Name="caso_exito" Type="varchar" MaxLength="300" />
+          <Property Name="referencia" Type="varchar" MaxLength="300" />
+          <Property Name="partnership" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="ocupado" Type="bit" />
+          <Property Name="recurso" Type="bit" />
+          <Property Name="lenguajes" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="respuestas">
+          <Key>
+            <PropertyRef Name="id_respuesta" />
+          </Key>
+          <Property Name="id_respuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_pregunta" Type="int" />
+          <Property Name="fk_id_opcion" Type="int" />
+          <Property Name="fk_id_contacto" Type="int" />
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="fecha_respuesta" Type="datetime" />
+        </EntityType>
+        <EntityType Name="software_empresa">
+          <Key>
+            <PropertyRef Name="id_sw_emp" />
+          </Key>
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="fk_id_sw" Type="int" />
+          <Property Name="id_sw_emp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tecnologia_producto">
+          <Key>
+            <PropertyRef Name="id_tec_prod" />
+          </Key>
+          <Property Name="fk_id_tecnologia" Type="int" />
+          <Property Name="fk_id_producto" Type="int" />
+          <Property Name="id_tec_prod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="solicitudes">
+          <Key>
+            <PropertyRef Name="id_solicitud" />
+          </Key>
+          <Property Name="id_solicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_producto" Type="int" />
+          <Property Name="fk_id_contacto" Type="int" />
+          <Property Name="fk_id_empresa" Type="int" />
+          <Property Name="estatus" Type="int" />
+          <Property Name="inicio_periodo" Type="date" />
+          <Property Name="fin_periodo" Type="date" />
+          <Property Name="anotaciones" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="fk_certemp_cert">
+          <End Role="cat_certificaciones" Type="Self.cat_certificaciones" Multiplicity="0..1" />
+          <End Role="certificaciones_empresas" Type="Self.certificaciones_empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_certificaciones">
+              <PropertyRef Name="id_cat_cert" />
+            </Principal>
+            <Dependent Role="certificaciones_empresas">
+              <PropertyRef Name="fk_id_cert" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_certemp_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="certificaciones_empresas" Type="Self.certificaciones_empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="certificaciones_empresas">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cobertura_em">
+          <End Role="coberturas" Type="Self.coberturas" Multiplicity="0..1" />
+          <End Role="empresas" Type="Self.empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coberturas">
+              <PropertyRef Name="id_cobertura" />
+            </Principal>
+            <Dependent Role="empresas">
+              <PropertyRef Name="fk_id_cobertura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_sol">
+          <End Role="contactos" Type="Self.contactos" Multiplicity="0..1" />
+          <End Role="solicitudes" Type="Self.solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contactos">
+              <PropertyRef Name="id_contacto" />
+            </Principal>
+            <Dependent Role="solicitudes">
+              <PropertyRef Name="fk_id_contacto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_emp_sol">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="solicitudes" Type="Self.solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="solicitudes">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empdir_dir">
+          <End Role="direcciones" Type="Self.direcciones" Multiplicity="0..1" />
+          <End Role="emp_sede" Type="Self.emp_sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="direcciones">
+              <PropertyRef Name="id_direccion" />
+            </Principal>
+            <Dependent Role="emp_sede">
+              <PropertyRef Name="fk_id_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empdir_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="emp_sede" Type="Self.emp_sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="emp_sede">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empdir_ts">
+          <End Role="cat_sedes" Type="Self.cat_sedes" Multiplicity="0..1" />
+          <End Role="emp_sede" Type="Self.emp_sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_sedes">
+              <PropertyRef Name="id_cat_sede" />
+            </Principal>
+            <Dependent Role="emp_sede">
+              <PropertyRef Name="fk_id_tipo_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empresa_co">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="contactos" Type="Self.contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="contactos">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_dv">
+          <End Role="cat_detalle_ventas" Type="Self.cat_detalle_ventas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_detalle_ventas">
+              <PropertyRef Name="id_det_ven" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_detalle_ventas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_nv">
+          <End Role="cat_nivel_ventas" Type="Self.cat_nivel_ventas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_nivel_ventas">
+              <PropertyRef Name="id_niv_ven" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_nivel_ventas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_sec">
+          <End Role="cat_sectores" Type="Self.cat_sectores" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_sectores">
+              <PropertyRef Name="id_cat_sec" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_sector" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_tam">
+          <End Role="cat_tamano_empresas" Type="Self.cat_tamano_empresas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tamano_empresas">
+              <PropertyRef Name="id_tam_emp" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_tamano" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_te">
+          <End Role="cat_tipo_empresas" Type="Self.cat_tipo_empresas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tipo_empresas">
+              <PropertyRef Name="id_cat_te" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_tipo_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatificacion_em">
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="0..1" />
+          <End Role="empresas" Type="Self.empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatificacion_empresa">
+              <PropertyRef Name="id_estat_empresa" />
+            </Principal>
+            <Dependent Role="empresas">
+              <PropertyRef Name="fk_id_estat_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_administrador">
+          <End Role="administradores" Type="Self.administradores" Multiplicity="0..1" />
+          <End Role="encuestas" Type="Self.encuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="administradores">
+              <PropertyRef Name="id_administrador" />
+            </Principal>
+            <Dependent Role="encuestas">
+              <PropertyRef Name="fk_id_administrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_contacto">
+          <End Role="contactos" Type="Self.contactos" Multiplicity="0..1" />
+          <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contactos">
+              <PropertyRef Name="id_contacto" />
+            </Principal>
+            <Dependent Role="respuestas">
+              <PropertyRef Name="fk_id_contacto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empresa">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="respuestas">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_encuesta">
+          <End Role="encuestas" Type="Self.encuestas" Multiplicity="0..1" />
+          <End Role="preguntas" Type="Self.preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="encuestas">
+              <PropertyRef Name="id_encuesta" />
+            </Principal>
+            <Dependent Role="preguntas">
+              <PropertyRef Name="fk_id_encuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_opcion">
+          <End Role="opciones" Type="Self.opciones" Multiplicity="0..1" />
+          <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opciones">
+              <PropertyRef Name="id_opcion" />
+            </Principal>
+            <Dependent Role="respuestas">
+              <PropertyRef Name="fk_id_opcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_pregunta">
+          <End Role="preguntas" Type="Self.preguntas" Multiplicity="0..1" />
+          <End Role="opciones" Type="Self.opciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="preguntas">
+              <PropertyRef Name="id_pregunta" />
+            </Principal>
+            <Dependent Role="opciones">
+              <PropertyRef Name="fk_id_pregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_value_drivers">
+          <End Role="cat_value_drivers" Type="Self.cat_value_drivers" Multiplicity="0..1" />
+          <End Role="cat_industry_levers" Type="Self.cat_industry_levers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_value_drivers">
+              <PropertyRef Name="id_value_divers" />
+            </Principal>
+            <Dependent Role="cat_industry_levers">
+              <PropertyRef Name="fk_id_value_drivers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_marniv">
+          <End Role="cat_partnership" Type="Self.cat_partnership" Multiplicity="0..1" />
+          <End Role="marca_nivel" Type="Self.marca_nivel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_partnership">
+              <PropertyRef Name="id_cat_part" />
+            </Principal>
+            <Dependent Role="marca_nivel">
+              <PropertyRef Name="fk_id_nivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_municipios_es">
+          <End Role="mex_estados" Type="Self.mex_estados" Multiplicity="0..1" />
+          <End Role="municipios" Type="Self.municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mex_estados">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="municipios">
+              <PropertyRef Name="fk_id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orgsemp_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="orgs_emp" Type="Self.orgs_emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="orgs_emp">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orgsemp_org">
+          <End Role="cat_org_empresarial" Type="Self.cat_org_empresarial" Multiplicity="0..1" />
+          <End Role="orgs_emp" Type="Self.orgs_emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_org_empresarial">
+              <PropertyRef Name="id_cat_oe" />
+            </Principal>
+            <Dependent Role="orgs_emp">
+              <PropertyRef Name="fk_id_org" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prod">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="prod_vald_ind" Type="Self.prod_vald_ind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="prod_vald_ind">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_mnp">
+          <End Role="marca_nivel" Type="Self.marca_nivel" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marca_nivel">
+              <PropertyRef Name="id_mar_niv" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_marca_nivelp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_org">
+          <End Role="cat_tipo_prod" Type="Self.cat_tipo_prod" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tipo_prod">
+              <PropertyRef Name="id_tipo_prod" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_origen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_pos">
+          <End Role="cat_posicionamiento" Type="Self.cat_posicionamiento" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_posicionamiento">
+              <PropertyRef Name="id_cat_pos" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_posicionamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prod_sol">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="solicitudes" Type="Self.solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="solicitudes">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prod_vald_ind">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="prod_vald_ind" Type="Self.prod_vald_ind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="prod_vald_ind">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puesto_co">
+          <End Role="cat_puestos" Type="Self.cat_puestos" Multiplicity="0..1" />
+          <End Role="contactos" Type="Self.contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_puestos">
+              <PropertyRef Name="id_puesto" />
+            </Principal>
+            <Dependent Role="contactos">
+              <PropertyRef Name="fk_id_puesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_swemp_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="software_empresa" Type="Self.software_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="software_empresa">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_swemp_sw">
+          <End Role="cat_softwares" Type="Self.cat_softwares" Multiplicity="0..1" />
+          <End Role="software_empresa" Type="Self.software_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_softwares">
+              <PropertyRef Name="id_cat_sw" />
+            </Principal>
+            <Dependent Role="software_empresa">
+              <PropertyRef Name="fk_id_sw" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tecprod_prod">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="tecnologia_producto" Type="Self.tecnologia_producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="tecnologia_producto">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tecprod_tec">
+          <End Role="cat_tecnologias" Type="Self.cat_tecnologias" Multiplicity="0..1" />
+          <End Role="tecnologia_producto" Type="Self.tecnologia_producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tecnologias">
+              <PropertyRef Name="id_cat_tec" />
+            </Principal>
+            <Dependent Role="tecnologia_producto">
+              <PropertyRef Name="fk_id_tecnologia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="agroalimModelStoreContainer">
+          <EntitySet Name="administradores" EntityType="Self.administradores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_certificaciones" EntityType="Self.cat_certificaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_detalle_ventas" EntityType="Self.cat_detalle_ventas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_industry_levers" EntityType="Self.cat_industry_levers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_nivel_ventas" EntityType="Self.cat_nivel_ventas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_org_empresarial" EntityType="Self.cat_org_empresarial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_paises" EntityType="Self.cat_paises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_partnership" EntityType="Self.cat_partnership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_posicionamiento" EntityType="Self.cat_posicionamiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_puestos" EntityType="Self.cat_puestos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_sectores" EntityType="Self.cat_sectores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_sectores_atendidos" EntityType="Self.cat_sectores_atendidos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_sedes" EntityType="Self.cat_sedes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_softwares" EntityType="Self.cat_softwares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_tamano_empresas" EntityType="Self.cat_tamano_empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_tecnologias" EntityType="Self.cat_tecnologias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_tipo_empresas" EntityType="Self.cat_tipo_empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_tipo_prod" EntityType="Self.cat_tipo_prod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cat_value_drivers" EntityType="Self.cat_value_drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="certificaciones_empresas" EntityType="Self.certificaciones_empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="coberturas" EntityType="Self.coberturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contactos" EntityType="Self.contactos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="direcciones" EntityType="Self.direcciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="emp_sede" EntityType="Self.emp_sede" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="empresas" EntityType="Self.empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="encuestas" EntityType="Self.encuestas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estatificacion_empresa" EntityType="Self.estatificacion_empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marca_nivel" EntityType="Self.marca_nivel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mex_estados" EntityType="Self.mex_estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="municipios" EntityType="Self.municipios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opciones" EntityType="Self.opciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orgs_emp" EntityType="Self.orgs_emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="preguntas" EntityType="Self.preguntas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prod_vald_ind" EntityType="Self.prod_vald_ind" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="respuestas" EntityType="Self.respuestas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="software_empresa" EntityType="Self.software_empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tecnologia_producto" EntityType="Self.tecnologia_producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="solicitudes" EntityType="Self.solicitudes" Schema="recusos_managment" store:Type="Tables" />
+          <AssociationSet Name="fk_certemp_cert" Association="Self.fk_certemp_cert">
+            <End Role="cat_certificaciones" EntitySet="cat_certificaciones" />
+            <End Role="certificaciones_empresas" EntitySet="certificaciones_empresas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_certemp_emp" Association="Self.fk_certemp_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="certificaciones_empresas" EntitySet="certificaciones_empresas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cobertura_em" Association="Self.fk_cobertura_em">
+            <End Role="coberturas" EntitySet="coberturas" />
+            <End Role="empresas" EntitySet="empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_sol" Association="Self.FK_con_sol">
+            <End Role="contactos" EntitySet="contactos" />
+            <End Role="solicitudes" EntitySet="solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_emp_sol" Association="Self.FK_emp_sol">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="solicitudes" EntitySet="solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empdir_dir" Association="Self.fk_empdir_dir">
+            <End Role="direcciones" EntitySet="direcciones" />
+            <End Role="emp_sede" EntitySet="emp_sede" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empdir_emp" Association="Self.fk_empdir_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="emp_sede" EntitySet="emp_sede" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empdir_ts" Association="Self.fk_empdir_ts">
+            <End Role="cat_sedes" EntitySet="cat_sedes" />
+            <End Role="emp_sede" EntitySet="emp_sede" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empresa_co" Association="Self.fk_empresa_co">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="contactos" EntitySet="contactos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_dv" Association="Self.fk_estatemp_dv">
+            <End Role="cat_detalle_ventas" EntitySet="cat_detalle_ventas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_nv" Association="Self.fk_estatemp_nv">
+            <End Role="cat_nivel_ventas" EntitySet="cat_nivel_ventas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_sec" Association="Self.fk_estatemp_sec">
+            <End Role="cat_sectores" EntitySet="cat_sectores" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_tam" Association="Self.fk_estatemp_tam">
+            <End Role="cat_tamano_empresas" EntitySet="cat_tamano_empresas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_te" Association="Self.fk_estatemp_te">
+            <End Role="cat_tipo_empresas" EntitySet="cat_tipo_empresas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatificacion_em" Association="Self.fk_estatificacion_em">
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+            <End Role="empresas" EntitySet="empresas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_administrador" Association="Self.fk_id_administrador">
+            <End Role="administradores" EntitySet="administradores" />
+            <End Role="encuestas" EntitySet="encuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_contacto" Association="Self.fk_id_contacto">
+            <End Role="contactos" EntitySet="contactos" />
+            <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empresa" Association="Self.fk_id_empresa">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_encuesta" Association="Self.fk_id_encuesta">
+            <End Role="encuestas" EntitySet="encuestas" />
+            <End Role="preguntas" EntitySet="preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_opcion" Association="Self.fk_id_opcion">
+            <End Role="opciones" EntitySet="opciones" />
+            <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_pregunta" Association="Self.fk_id_pregunta">
+            <End Role="preguntas" EntitySet="preguntas" />
+            <End Role="opciones" EntitySet="opciones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_value_drivers" Association="Self.fk_id_value_drivers">
+            <End Role="cat_value_drivers" EntitySet="cat_value_drivers" />
+            <End Role="cat_industry_levers" EntitySet="cat_industry_levers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_marniv" Association="Self.fk_marniv">
+            <End Role="cat_partnership" EntitySet="cat_partnership" />
+            <End Role="marca_nivel" EntitySet="marca_nivel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_municipios_es" Association="Self.fk_municipios_es">
+            <End Role="mex_estados" EntitySet="mex_estados" />
+            <End Role="municipios" EntitySet="municipios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orgsemp_emp" Association="Self.fk_orgsemp_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="orgs_emp" EntitySet="orgs_emp" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orgsemp_org" Association="Self.fk_orgsemp_org">
+            <End Role="cat_org_empresarial" EntitySet="cat_org_empresarial" />
+            <End Role="orgs_emp" EntitySet="orgs_emp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prod" Association="Self.FK_prod">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="prod_vald_ind" EntitySet="prod_vald_ind" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_emp" Association="Self.fk_prod_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_mnp" Association="Self.fk_prod_mnp">
+            <End Role="marca_nivel" EntitySet="marca_nivel" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_org" Association="Self.fk_prod_org">
+            <End Role="cat_tipo_prod" EntitySet="cat_tipo_prod" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_pos" Association="Self.fk_prod_pos">
+            <End Role="cat_posicionamiento" EntitySet="cat_posicionamiento" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prod_sol" Association="Self.FK_prod_sol">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="solicitudes" EntitySet="solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prod_vald_ind" Association="Self.FK_prod_vald_ind">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="prod_vald_ind" EntitySet="prod_vald_ind" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puesto_co" Association="Self.fk_puesto_co">
+            <End Role="cat_puestos" EntitySet="cat_puestos" />
+            <End Role="contactos" EntitySet="contactos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_swemp_emp" Association="Self.fk_swemp_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="software_empresa" EntitySet="software_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_swemp_sw" Association="Self.fk_swemp_sw">
+            <End Role="cat_softwares" EntitySet="cat_softwares" />
+            <End Role="software_empresa" EntitySet="software_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tecprod_prod" Association="Self.fk_tecprod_prod">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="tecnologia_producto" EntitySet="tecnologia_producto" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tecprod_tec" Association="Self.fk_tecprod_tec">
+            <End Role="cat_tecnologias" EntitySet="cat_tecnologias" />
+            <End Role="tecnologia_producto" EntitySet="tecnologia_producto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="agroalimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="administradores">
+          <Key>
+            <PropertyRef Name="id_administrador" />
+          </Key>
+          <Property Name="id_administrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="empresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="usuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_certificaciones">
+          <Key>
+            <PropertyRef Name="id_cat_cert" />
+          </Key>
+          <Property Name="id_cat_cert" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_cert" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_detalle_ventas">
+          <Key>
+            <PropertyRef Name="id_det_ven" />
+          </Key>
+          <Property Name="id_det_ven" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tamano_detven" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_industry_levers">
+          <Key>
+            <PropertyRef Name="id_industry_levers" />
+          </Key>
+          <Property Name="fk_id_value_drivers" Type="Int32" />
+          <Property Name="id_industry_levers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="industry_levers" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+          <NavigationProperty Name="cat_value_drivers" Relationship="Self.fk_id_value_drivers" FromRole="cat_industry_levers" ToRole="cat_value_drivers" />
+        </EntityType>
+        <EntityType Name="cat_nivel_ventas">
+          <Key>
+            <PropertyRef Name="id_niv_ven" />
+          </Key>
+          <Property Name="id_niv_ven" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nivel_ventas" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_org_empresarial">
+          <Key>
+            <PropertyRef Name="id_cat_oe" />
+          </Key>
+          <Property Name="id_cat_oe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_orgemp" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_paises">
+          <Key>
+            <PropertyRef Name="id_pais" />
+          </Key>
+          <Property Name="id_pais" Type="Int32" Nullable="false" />
+          <Property Name="cod_pais" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="nombre_pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_partnership">
+          <Key>
+            <PropertyRef Name="id_cat_part" />
+          </Key>
+          <Property Name="id_cat_part" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nivel_partnership" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_posicionamiento">
+          <Key>
+            <PropertyRef Name="id_cat_pos" />
+          </Key>
+          <Property Name="id_cat_pos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="posicionamiento" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_puestos">
+          <Key>
+            <PropertyRef Name="id_puesto" />
+          </Key>
+          <Property Name="id_puesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_puesto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_sectores">
+          <Key>
+            <PropertyRef Name="id_cat_sec" />
+          </Key>
+          <Property Name="id_cat_sec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_sector" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_sectores_atendidos">
+          <Key>
+            <PropertyRef Name="id_cat_sec" />
+          </Key>
+          <Property Name="id_cat_sec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_sector" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_sedes">
+          <Key>
+            <PropertyRef Name="id_cat_sede" />
+          </Key>
+          <Property Name="id_cat_sede" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_sede" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_softwares">
+          <Key>
+            <PropertyRef Name="id_cat_sw" />
+          </Key>
+          <Property Name="id_cat_sw" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_sw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_tamano_empresas">
+          <Key>
+            <PropertyRef Name="id_tam_emp" />
+          </Key>
+          <Property Name="id_tam_emp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tamano_empresa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_tecnologias">
+          <Key>
+            <PropertyRef Name="id_cat_tec" />
+          </Key>
+          <Property Name="id_cat_tec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_tecnologia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_tipo_empresas">
+          <Key>
+            <PropertyRef Name="id_cat_te" />
+          </Key>
+          <Property Name="id_cat_te" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_tipo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_tipo_prod">
+          <Key>
+            <PropertyRef Name="id_tipo_prod" />
+          </Key>
+          <Property Name="id_tipo_prod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_producto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="cat_value_drivers">
+          <Key>
+            <PropertyRef Name="id_value_divers" />
+          </Key>
+          <Property Name="id_value_divers" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="value_driver" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+          <NavigationProperty Name="cat_industry_levers" Relationship="Self.fk_id_value_drivers" FromRole="cat_value_drivers" ToRole="cat_industry_levers" />
+        </EntityType>
+        <EntityType Name="certificaciones_empresas">
+          <Key>
+            <PropertyRef Name="id_cert_emp" />
+          </Key>
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="fk_id_cert" Type="Int32" />
+          <Property Name="id_cert_emp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="coberturas">
+          <Key>
+            <PropertyRef Name="id_cobertura" />
+          </Key>
+          <Property Name="id_cobertura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nacional" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="internacional" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="empresas" Relationship="Self.fk_cobertura_em" FromRole="coberturas" ToRole="empresas" />
+        </EntityType>
+        <EntityType Name="contactos">
+          <Key>
+            <PropertyRef Name="id_contacto" />
+          </Key>
+          <Property Name="fk_id_puesto" Type="Int32" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_usuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="id_contacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estatus_registro" Type="Int32" />
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="estado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="direcciones">
+          <Key>
+            <PropertyRef Name="id_direccion" />
+          </Key>
+          <Property Name="id_direccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="municipio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="pais" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="emp_sede">
+          <Key>
+            <PropertyRef Name="id_emp_dir" />
+          </Key>
+          <Property Name="fk_id_direccion" Type="Int32" />
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="fk_id_tipo_sede" Type="Int32" />
+          <Property Name="id_emp_dir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="empresas">
+          <Key>
+            <PropertyRef Name="id_empresa" />
+          </Key>
+          <Property Name="fk_id_cobertura" Type="Int32" />
+          <Property Name="fk_id_estat_empresa" Type="Int32" />
+          <Property Name="id_empresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="razon_social" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="web" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+          <Property Name="linkedin" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="facebook" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="twitter" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="instagram" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion_oferta_valor" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sectores_atendidos" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="principales_clientes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="encuestas">
+          <Key>
+            <PropertyRef Name="id_encuesta" />
+          </Key>
+          <Property Name="id_encuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_vigencia" Type="DateTime" Precision="3" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
+          <Property Name="estatus" Type="Int32" />
+          <Property Name="fk_id_administrador" Type="Int32" />
+        </EntityType>
+        <EntityType Name="estatificacion_empresa">
+          <Key>
+            <PropertyRef Name="id_estat_empresa" />
+          </Key>
+          <Property Name="fk_id_tamano" Type="Int32" />
+          <Property Name="fk_id_nivel_ventas" Type="Int32" />
+          <Property Name="fk_id_detalle_ventas" Type="Int32" />
+          <Property Name="fk_id_sector" Type="Int32" />
+          <Property Name="fk_id_tipo_empresa" Type="Int32" />
+          <Property Name="id_estat_empresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="marca_nivel">
+          <Key>
+            <PropertyRef Name="id_mar_niv" />
+          </Key>
+          <Property Name="fk_id_nivel" Type="Int32" />
+          <Property Name="id_mar_niv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mex_estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="nombre_estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="municipios" Relationship="Self.fk_municipios_es" FromRole="mex_estados" ToRole="municipios" />
+        </EntityType>
+        <EntityType Name="municipios">
+          <Key>
+            <PropertyRef Name="id_municipio" />
+          </Key>
+          <Property Name="id_municipio" Type="Int32" Nullable="false" />
+          <Property Name="nombre_municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fk_id_estado" Type="Int32" />
+          <NavigationProperty Name="mex_estados" Relationship="Self.fk_municipios_es" FromRole="municipios" ToRole="mex_estados" />
+        </EntityType>
+        <EntityType Name="opciones">
+          <Key>
+            <PropertyRef Name="id_opcion" />
+          </Key>
+          <Property Name="id_opcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="texto" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Int32" />
+          <Property Name="fk_id_pregunta" Type="Int32" />
+        </EntityType>
+        <EntityType Name="orgs_emp">
+          <Key>
+            <PropertyRef Name="id_orgs_emp" />
+          </Key>
+          <Property Name="fk_id_org" Type="Int32" />
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="id_orgs_emp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="preguntas">
+          <Key>
+            <PropertyRef Name="id_pregunta" />
+          </Key>
+          <Property Name="id_pregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pregunta" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
+          <Property Name="estatus" Type="Int32" />
+          <Property Name="fk_id_encuesta" Type="Int32" />
+        </EntityType>
+        <EntityType Name="prod_vald_ind">
+          <Key>
+            <PropertyRef Name="id_prod_vald_ind" />
+          </Key>
+          <Property Name="id_prod_vald_ind" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_producto" Type="Int32" />
+          <Property Name="value_driver" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="industry_levers" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="productos">
+          <Key>
+            <PropertyRef Name="id_producto" />
+          </Key>
+          <Property Name="fk_id_posicionamiento" Type="Int32" />
+          <Property Name="fk_id_marca_nivelp" Type="Int32" />
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="fk_id_origen" Type="Int32" />
+          <Property Name="fk_id_tecnologia" Type="Int32" />
+          <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="fk_id_value_drivers" Type="Int32" />
+          <Property Name="fk_industry_levers" Type="Int32" />
+          <Property Name="caso_exito" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="referencia" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="partnership" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="ocupado" Type="Boolean" />
+          <Property Name="recurso" Type="Boolean" />
+          <Property Name="lenguajes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="respuestas">
+          <Key>
+            <PropertyRef Name="id_respuesta" />
+          </Key>
+          <Property Name="id_respuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_pregunta" Type="Int32" />
+          <Property Name="fk_id_opcion" Type="Int32" />
+          <Property Name="fk_id_contacto" Type="Int32" />
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="fecha_respuesta" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="software_empresa">
+          <Key>
+            <PropertyRef Name="id_sw_emp" />
+          </Key>
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="fk_id_sw" Type="Int32" />
+          <Property Name="id_sw_emp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tecnologia_producto">
+          <Key>
+            <PropertyRef Name="id_tec_prod" />
+          </Key>
+          <Property Name="fk_id_tecnologia" Type="Int32" />
+          <Property Name="fk_id_producto" Type="Int32" />
+          <Property Name="id_tec_prod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="solicitudes">
+          <Key>
+            <PropertyRef Name="id_solicitud" />
+          </Key>
+          <Property Name="id_solicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_producto" Type="Int32" />
+          <Property Name="fk_id_contacto" Type="Int32" />
+          <Property Name="fk_id_empresa" Type="Int32" />
+          <Property Name="estatus" Type="Int32" />
+          <Property Name="inicio_periodo" Type="DateTime" Precision="0" />
+          <Property Name="fin_periodo" Type="DateTime" Precision="0" />
+          <Property Name="anotaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="fk_id_administrador">
+          <End Role="administradores" Type="Self.administradores" Multiplicity="0..1" />
+          <End Role="encuestas" Type="Self.encuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="administradores">
+              <PropertyRef Name="id_administrador" />
+            </Principal>
+            <Dependent Role="encuestas">
+              <PropertyRef Name="fk_id_administrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_certemp_cert">
+          <End Role="cat_certificaciones" Type="Self.cat_certificaciones" Multiplicity="0..1" />
+          <End Role="certificaciones_empresas" Type="Self.certificaciones_empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_certificaciones">
+              <PropertyRef Name="id_cat_cert" />
+            </Principal>
+            <Dependent Role="certificaciones_empresas">
+              <PropertyRef Name="fk_id_cert" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_dv">
+          <End Role="cat_detalle_ventas" Type="Self.cat_detalle_ventas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_detalle_ventas">
+              <PropertyRef Name="id_det_ven" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_detalle_ventas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_value_drivers">
+          <End Role="cat_value_drivers" Type="Self.cat_value_drivers" Multiplicity="0..1" />
+          <End Role="cat_industry_levers" Type="Self.cat_industry_levers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_value_drivers">
+              <PropertyRef Name="id_value_divers" />
+            </Principal>
+            <Dependent Role="cat_industry_levers">
+              <PropertyRef Name="fk_id_value_drivers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_nv">
+          <End Role="cat_nivel_ventas" Type="Self.cat_nivel_ventas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_nivel_ventas">
+              <PropertyRef Name="id_niv_ven" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_nivel_ventas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orgsemp_org">
+          <End Role="cat_org_empresarial" Type="Self.cat_org_empresarial" Multiplicity="0..1" />
+          <End Role="orgs_emp" Type="Self.orgs_emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_org_empresarial">
+              <PropertyRef Name="id_cat_oe" />
+            </Principal>
+            <Dependent Role="orgs_emp">
+              <PropertyRef Name="fk_id_org" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_marniv">
+          <End Role="cat_partnership" Type="Self.cat_partnership" Multiplicity="0..1" />
+          <End Role="marca_nivel" Type="Self.marca_nivel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_partnership">
+              <PropertyRef Name="id_cat_part" />
+            </Principal>
+            <Dependent Role="marca_nivel">
+              <PropertyRef Name="fk_id_nivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_pos">
+          <End Role="cat_posicionamiento" Type="Self.cat_posicionamiento" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_posicionamiento">
+              <PropertyRef Name="id_cat_pos" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_posicionamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_puesto_co">
+          <End Role="cat_puestos" Type="Self.cat_puestos" Multiplicity="0..1" />
+          <End Role="contactos" Type="Self.contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_puestos">
+              <PropertyRef Name="id_puesto" />
+            </Principal>
+            <Dependent Role="contactos">
+              <PropertyRef Name="fk_id_puesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_sec">
+          <End Role="cat_sectores" Type="Self.cat_sectores" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_sectores">
+              <PropertyRef Name="id_cat_sec" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_sector" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empdir_ts">
+          <End Role="cat_sedes" Type="Self.cat_sedes" Multiplicity="0..1" />
+          <End Role="emp_sede" Type="Self.emp_sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_sedes">
+              <PropertyRef Name="id_cat_sede" />
+            </Principal>
+            <Dependent Role="emp_sede">
+              <PropertyRef Name="fk_id_tipo_sede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_swemp_sw">
+          <End Role="cat_softwares" Type="Self.cat_softwares" Multiplicity="0..1" />
+          <End Role="software_empresa" Type="Self.software_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_softwares">
+              <PropertyRef Name="id_cat_sw" />
+            </Principal>
+            <Dependent Role="software_empresa">
+              <PropertyRef Name="fk_id_sw" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_tam">
+          <End Role="cat_tamano_empresas" Type="Self.cat_tamano_empresas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tamano_empresas">
+              <PropertyRef Name="id_tam_emp" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_tamano" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tecprod_tec">
+          <End Role="cat_tecnologias" Type="Self.cat_tecnologias" Multiplicity="0..1" />
+          <End Role="tecnologia_producto" Type="Self.tecnologia_producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tecnologias">
+              <PropertyRef Name="id_cat_tec" />
+            </Principal>
+            <Dependent Role="tecnologia_producto">
+              <PropertyRef Name="fk_id_tecnologia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatemp_te">
+          <End Role="cat_tipo_empresas" Type="Self.cat_tipo_empresas" Multiplicity="0..1" />
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tipo_empresas">
+              <PropertyRef Name="id_cat_te" />
+            </Principal>
+            <Dependent Role="estatificacion_empresa">
+              <PropertyRef Name="fk_id_tipo_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_org">
+          <End Role="cat_tipo_prod" Type="Self.cat_tipo_prod" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cat_tipo_prod">
+              <PropertyRef Name="id_tipo_prod" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_origen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_certemp_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="certificaciones_empresas" Type="Self.certificaciones_empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="certificaciones_empresas">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_cobertura_em">
+          <End Role="coberturas" Type="Self.coberturas" Multiplicity="0..1" />
+          <End Role="empresas" Type="Self.empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coberturas">
+              <PropertyRef Name="id_cobertura" />
+            </Principal>
+            <Dependent Role="empresas">
+              <PropertyRef Name="fk_id_cobertura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_con_sol">
+          <End Role="contactos" Type="Self.contactos" Multiplicity="0..1" />
+          <End Role="solicitudes" Type="Self.solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contactos">
+              <PropertyRef Name="id_contacto" />
+            </Principal>
+            <Dependent Role="solicitudes">
+              <PropertyRef Name="fk_id_contacto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empresa_co">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="contactos" Type="Self.contactos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="contactos">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_contacto">
+          <End Role="contactos" Type="Self.contactos" Multiplicity="0..1" />
+          <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contactos">
+              <PropertyRef Name="id_contacto" />
+            </Principal>
+            <Dependent Role="respuestas">
+              <PropertyRef Name="fk_id_contacto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empdir_dir">
+          <End Role="direcciones" Type="Self.direcciones" Multiplicity="0..1" />
+          <End Role="emp_sede" Type="Self.emp_sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="direcciones">
+              <PropertyRef Name="id_direccion" />
+            </Principal>
+            <Dependent Role="emp_sede">
+              <PropertyRef Name="fk_id_direccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empdir_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="emp_sede" Type="Self.emp_sede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="emp_sede">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_emp_sol">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="solicitudes" Type="Self.solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="solicitudes">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_estatificacion_em">
+          <End Role="estatificacion_empresa" Type="Self.estatificacion_empresa" Multiplicity="0..1" />
+          <End Role="empresas" Type="Self.empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatificacion_empresa">
+              <PropertyRef Name="id_estat_empresa" />
+            </Principal>
+            <Dependent Role="empresas">
+              <PropertyRef Name="fk_id_estat_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empresa">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="respuestas">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orgsemp_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="orgs_emp" Type="Self.orgs_emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="orgs_emp">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_swemp_emp">
+          <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+          <End Role="software_empresa" Type="Self.software_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresas">
+              <PropertyRef Name="id_empresa" />
+            </Principal>
+            <Dependent Role="software_empresa">
+              <PropertyRef Name="fk_id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_encuesta">
+          <End Role="encuestas" Type="Self.encuestas" Multiplicity="0..1" />
+          <End Role="preguntas" Type="Self.preguntas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="encuestas">
+              <PropertyRef Name="id_encuesta" />
+            </Principal>
+            <Dependent Role="preguntas">
+              <PropertyRef Name="fk_id_encuesta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prod_mnp">
+          <End Role="marca_nivel" Type="Self.marca_nivel" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marca_nivel">
+              <PropertyRef Name="id_mar_niv" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="fk_id_marca_nivelp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_municipios_es">
+          <End Role="mex_estados" Type="Self.mex_estados" Multiplicity="0..1" />
+          <End Role="municipios" Type="Self.municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mex_estados">
+              <PropertyRef Name="id_estado" />
+            </Principal>
+            <Dependent Role="municipios">
+              <PropertyRef Name="fk_id_estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_opcion">
+          <End Role="opciones" Type="Self.opciones" Multiplicity="0..1" />
+          <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opciones">
+              <PropertyRef Name="id_opcion" />
+            </Principal>
+            <Dependent Role="respuestas">
+              <PropertyRef Name="fk_id_opcion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_pregunta">
+          <End Role="preguntas" Type="Self.preguntas" Multiplicity="0..1" />
+          <End Role="opciones" Type="Self.opciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="preguntas">
+              <PropertyRef Name="id_pregunta" />
+            </Principal>
+            <Dependent Role="opciones">
+              <PropertyRef Name="fk_id_pregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prod">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="prod_vald_ind" Type="Self.prod_vald_ind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="prod_vald_ind">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prod_vald_ind">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="prod_vald_ind" Type="Self.prod_vald_ind" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="prod_vald_ind">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_prod_sol">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="solicitudes" Type="Self.solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="solicitudes">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tecprod_prod">
+          <End Role="productos" Type="Self.productos" Multiplicity="0..1" />
+          <End Role="tecnologia_producto" Type="Self.tecnologia_producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="productos">
+              <PropertyRef Name="id_producto" />
+            </Principal>
+            <Dependent Role="tecnologia_producto">
+              <PropertyRef Name="fk_id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="agroalimEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="administradores" EntityType="Self.administradores" />
+          <EntitySet Name="cat_certificaciones" EntityType="Self.cat_certificaciones" />
+          <EntitySet Name="cat_detalle_ventas" EntityType="Self.cat_detalle_ventas" />
+          <EntitySet Name="cat_industry_levers" EntityType="Self.cat_industry_levers" />
+          <EntitySet Name="cat_nivel_ventas" EntityType="Self.cat_nivel_ventas" />
+          <EntitySet Name="cat_org_empresarial" EntityType="Self.cat_org_empresarial" />
+          <EntitySet Name="cat_paises" EntityType="Self.cat_paises" />
+          <EntitySet Name="cat_partnership" EntityType="Self.cat_partnership" />
+          <EntitySet Name="cat_posicionamiento" EntityType="Self.cat_posicionamiento" />
+          <EntitySet Name="cat_puestos" EntityType="Self.cat_puestos" />
+          <EntitySet Name="cat_sectores" EntityType="Self.cat_sectores" />
+          <EntitySet Name="cat_sectores_atendidos" EntityType="Self.cat_sectores_atendidos" />
+          <EntitySet Name="cat_sedes" EntityType="Self.cat_sedes" />
+          <EntitySet Name="cat_softwares" EntityType="Self.cat_softwares" />
+          <EntitySet Name="cat_tamano_empresas" EntityType="Self.cat_tamano_empresas" />
+          <EntitySet Name="cat_tecnologias" EntityType="Self.cat_tecnologias" />
+          <EntitySet Name="cat_tipo_empresas" EntityType="Self.cat_tipo_empresas" />
+          <EntitySet Name="cat_tipo_prod" EntityType="Self.cat_tipo_prod" />
+          <EntitySet Name="cat_value_drivers" EntityType="Self.cat_value_drivers" />
+          <EntitySet Name="certificaciones_empresas" EntityType="Self.certificaciones_empresas" />
+          <EntitySet Name="coberturas" EntityType="Self.coberturas" />
+          <EntitySet Name="contactos" EntityType="Self.contactos" />
+          <EntitySet Name="direcciones" EntityType="Self.direcciones" />
+          <EntitySet Name="emp_sede" EntityType="Self.emp_sede" />
+          <EntitySet Name="empresas" EntityType="Self.empresas" />
+          <EntitySet Name="encuestas" EntityType="Self.encuestas" />
+          <EntitySet Name="estatificacion_empresa" EntityType="Self.estatificacion_empresa" />
+          <EntitySet Name="marca_nivel" EntityType="Self.marca_nivel" />
+          <EntitySet Name="mex_estados" EntityType="Self.mex_estados" />
+          <EntitySet Name="municipios" EntityType="Self.municipios" />
+          <EntitySet Name="opciones" EntityType="Self.opciones" />
+          <EntitySet Name="orgs_emp" EntityType="Self.orgs_emp" />
+          <EntitySet Name="preguntas" EntityType="Self.preguntas" />
+          <EntitySet Name="prod_vald_ind" EntityType="Self.prod_vald_ind" />
+          <EntitySet Name="productos" EntityType="Self.productos" />
+          <EntitySet Name="respuestas" EntityType="Self.respuestas" />
+          <EntitySet Name="software_empresa" EntityType="Self.software_empresa" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tecnologia_producto" EntityType="Self.tecnologia_producto" />
+          <EntitySet Name="solicitudes" EntityType="Self.solicitudes" />
+          <AssociationSet Name="fk_id_administrador" Association="Self.fk_id_administrador">
+            <End Role="administradores" EntitySet="administradores" />
+            <End Role="encuestas" EntitySet="encuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_certemp_cert" Association="Self.fk_certemp_cert">
+            <End Role="cat_certificaciones" EntitySet="cat_certificaciones" />
+            <End Role="certificaciones_empresas" EntitySet="certificaciones_empresas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_dv" Association="Self.fk_estatemp_dv">
+            <End Role="cat_detalle_ventas" EntitySet="cat_detalle_ventas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_value_drivers" Association="Self.fk_id_value_drivers">
+            <End Role="cat_value_drivers" EntitySet="cat_value_drivers" />
+            <End Role="cat_industry_levers" EntitySet="cat_industry_levers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_nv" Association="Self.fk_estatemp_nv">
+            <End Role="cat_nivel_ventas" EntitySet="cat_nivel_ventas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orgsemp_org" Association="Self.fk_orgsemp_org">
+            <End Role="cat_org_empresarial" EntitySet="cat_org_empresarial" />
+            <End Role="orgs_emp" EntitySet="orgs_emp" />
+          </AssociationSet>
+          <AssociationSet Name="fk_marniv" Association="Self.fk_marniv">
+            <End Role="cat_partnership" EntitySet="cat_partnership" />
+            <End Role="marca_nivel" EntitySet="marca_nivel" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_pos" Association="Self.fk_prod_pos">
+            <End Role="cat_posicionamiento" EntitySet="cat_posicionamiento" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_puesto_co" Association="Self.fk_puesto_co">
+            <End Role="cat_puestos" EntitySet="cat_puestos" />
+            <End Role="contactos" EntitySet="contactos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_sec" Association="Self.fk_estatemp_sec">
+            <End Role="cat_sectores" EntitySet="cat_sectores" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empdir_ts" Association="Self.fk_empdir_ts">
+            <End Role="cat_sedes" EntitySet="cat_sedes" />
+            <End Role="emp_sede" EntitySet="emp_sede" />
+          </AssociationSet>
+          <AssociationSet Name="fk_swemp_sw" Association="Self.fk_swemp_sw">
+            <End Role="cat_softwares" EntitySet="cat_softwares" />
+            <End Role="software_empresa" EntitySet="software_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_tam" Association="Self.fk_estatemp_tam">
+            <End Role="cat_tamano_empresas" EntitySet="cat_tamano_empresas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tecprod_tec" Association="Self.fk_tecprod_tec">
+            <End Role="cat_tecnologias" EntitySet="cat_tecnologias" />
+            <End Role="tecnologia_producto" EntitySet="tecnologia_producto" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatemp_te" Association="Self.fk_estatemp_te">
+            <End Role="cat_tipo_empresas" EntitySet="cat_tipo_empresas" />
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_org" Association="Self.fk_prod_org">
+            <End Role="cat_tipo_prod" EntitySet="cat_tipo_prod" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_certemp_emp" Association="Self.fk_certemp_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="certificaciones_empresas" EntitySet="certificaciones_empresas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_cobertura_em" Association="Self.fk_cobertura_em">
+            <End Role="coberturas" EntitySet="coberturas" />
+            <End Role="empresas" EntitySet="empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_con_sol" Association="Self.FK_con_sol">
+            <End Role="contactos" EntitySet="contactos" />
+            <End Role="solicitudes" EntitySet="solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empresa_co" Association="Self.fk_empresa_co">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="contactos" EntitySet="contactos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_contacto" Association="Self.fk_id_contacto">
+            <End Role="contactos" EntitySet="contactos" />
+            <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empdir_dir" Association="Self.fk_empdir_dir">
+            <End Role="direcciones" EntitySet="direcciones" />
+            <End Role="emp_sede" EntitySet="emp_sede" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empdir_emp" Association="Self.fk_empdir_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="emp_sede" EntitySet="emp_sede" />
+          </AssociationSet>
+          <AssociationSet Name="FK_emp_sol" Association="Self.FK_emp_sol">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="solicitudes" EntitySet="solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_estatificacion_em" Association="Self.fk_estatificacion_em">
+            <End Role="estatificacion_empresa" EntitySet="estatificacion_empresa" />
+            <End Role="empresas" EntitySet="empresas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empresa" Association="Self.fk_id_empresa">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orgsemp_emp" Association="Self.fk_orgsemp_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="orgs_emp" EntitySet="orgs_emp" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_emp" Association="Self.fk_prod_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_swemp_emp" Association="Self.fk_swemp_emp">
+            <End Role="empresas" EntitySet="empresas" />
+            <End Role="software_empresa" EntitySet="software_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_encuesta" Association="Self.fk_id_encuesta">
+            <End Role="encuestas" EntitySet="encuestas" />
+            <End Role="preguntas" EntitySet="preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prod_mnp" Association="Self.fk_prod_mnp">
+            <End Role="marca_nivel" EntitySet="marca_nivel" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_municipios_es" Association="Self.fk_municipios_es">
+            <End Role="mex_estados" EntitySet="mex_estados" />
+            <End Role="municipios" EntitySet="municipios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_opcion" Association="Self.fk_id_opcion">
+            <End Role="opciones" EntitySet="opciones" />
+            <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_pregunta" Association="Self.fk_id_pregunta">
+            <End Role="preguntas" EntitySet="preguntas" />
+            <End Role="opciones" EntitySet="opciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prod" Association="Self.FK_prod">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="prod_vald_ind" EntitySet="prod_vald_ind" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prod_vald_ind" Association="Self.FK_prod_vald_ind">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="prod_vald_ind" EntitySet="prod_vald_ind" />
+          </AssociationSet>
+          <AssociationSet Name="FK_prod_sol" Association="Self.FK_prod_sol">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="solicitudes" EntitySet="solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tecprod_prod" Association="Self.fk_tecprod_prod">
+            <End Role="productos" EntitySet="productos" />
+            <End Role="tecnologia_producto" EntitySet="tecnologia_producto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="agroalimModelStoreContainer" CdmEntityContainer="agroalimEntities">
+          <EntitySetMapping Name="administradores">
+            <EntityTypeMapping TypeName="agroalimModel.administradores">
+              <MappingFragment StoreEntitySet="administradores">
+                <ScalarProperty Name="id_administrador" ColumnName="id_administrador" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_certificaciones">
+            <EntityTypeMapping TypeName="agroalimModel.cat_certificaciones">
+              <MappingFragment StoreEntitySet="cat_certificaciones">
+                <ScalarProperty Name="id_cat_cert" ColumnName="id_cat_cert" />
+                <ScalarProperty Name="nombre_cert" ColumnName="nombre_cert" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_detalle_ventas">
+            <EntityTypeMapping TypeName="agroalimModel.cat_detalle_ventas">
+              <MappingFragment StoreEntitySet="cat_detalle_ventas">
+                <ScalarProperty Name="id_det_ven" ColumnName="id_det_ven" />
+                <ScalarProperty Name="tamano_detven" ColumnName="tamano_detven" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_industry_levers">
+            <EntityTypeMapping TypeName="agroalimModel.cat_industry_levers">
+              <MappingFragment StoreEntitySet="cat_industry_levers">
+                <ScalarProperty Name="fk_id_value_drivers" ColumnName="fk_id_value_drivers" />
+                <ScalarProperty Name="id_industry_levers" ColumnName="id_industry_levers" />
+                <ScalarProperty Name="industry_levers" ColumnName="industry_levers" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_nivel_ventas">
+            <EntityTypeMapping TypeName="agroalimModel.cat_nivel_ventas">
+              <MappingFragment StoreEntitySet="cat_nivel_ventas">
+                <ScalarProperty Name="id_niv_ven" ColumnName="id_niv_ven" />
+                <ScalarProperty Name="nivel_ventas" ColumnName="nivel_ventas" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_org_empresarial">
+            <EntityTypeMapping TypeName="agroalimModel.cat_org_empresarial">
+              <MappingFragment StoreEntitySet="cat_org_empresarial">
+                <ScalarProperty Name="id_cat_oe" ColumnName="id_cat_oe" />
+                <ScalarProperty Name="nombre_orgemp" ColumnName="nombre_orgemp" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_paises">
+            <EntityTypeMapping TypeName="agroalimModel.cat_paises">
+              <MappingFragment StoreEntitySet="cat_paises">
+                <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+                <ScalarProperty Name="cod_pais" ColumnName="cod_pais" />
+                <ScalarProperty Name="nombre_pais" ColumnName="nombre_pais" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_partnership">
+            <EntityTypeMapping TypeName="agroalimModel.cat_partnership">
+              <MappingFragment StoreEntitySet="cat_partnership">
+                <ScalarProperty Name="id_cat_part" ColumnName="id_cat_part" />
+                <ScalarProperty Name="nivel_partnership" ColumnName="nivel_partnership" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_posicionamiento">
+            <EntityTypeMapping TypeName="agroalimModel.cat_posicionamiento">
+              <MappingFragment StoreEntitySet="cat_posicionamiento">
+                <ScalarProperty Name="id_cat_pos" ColumnName="id_cat_pos" />
+                <ScalarProperty Name="posicionamiento" ColumnName="posicionamiento" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_puestos">
+            <EntityTypeMapping TypeName="agroalimModel.cat_puestos">
+              <MappingFragment StoreEntitySet="cat_puestos">
+                <ScalarProperty Name="id_puesto" ColumnName="id_puesto" />
+                <ScalarProperty Name="nombre_puesto" ColumnName="nombre_puesto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_sectores">
+            <EntityTypeMapping TypeName="agroalimModel.cat_sectores">
+              <MappingFragment StoreEntitySet="cat_sectores">
+                <ScalarProperty Name="id_cat_sec" ColumnName="id_cat_sec" />
+                <ScalarProperty Name="nombre_sector" ColumnName="nombre_sector" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_sectores_atendidos">
+            <EntityTypeMapping TypeName="agroalimModel.cat_sectores_atendidos">
+              <MappingFragment StoreEntitySet="cat_sectores_atendidos">
+                <ScalarProperty Name="id_cat_sec" ColumnName="id_cat_sec" />
+                <ScalarProperty Name="nombre_sector" ColumnName="nombre_sector" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_sedes">
+            <EntityTypeMapping TypeName="agroalimModel.cat_sedes">
+              <MappingFragment StoreEntitySet="cat_sedes">
+                <ScalarProperty Name="id_cat_sede" ColumnName="id_cat_sede" />
+                <ScalarProperty Name="tipo_sede" ColumnName="tipo_sede" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_softwares">
+            <EntityTypeMapping TypeName="agroalimModel.cat_softwares">
+              <MappingFragment StoreEntitySet="cat_softwares">
+                <ScalarProperty Name="id_cat_sw" ColumnName="id_cat_sw" />
+                <ScalarProperty Name="nombre_sw" ColumnName="nombre_sw" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_tamano_empresas">
+            <EntityTypeMapping TypeName="agroalimModel.cat_tamano_empresas">
+              <MappingFragment StoreEntitySet="cat_tamano_empresas">
+                <ScalarProperty Name="id_tam_emp" ColumnName="id_tam_emp" />
+                <ScalarProperty Name="tamano_empresa" ColumnName="tamano_empresa" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_tecnologias">
+            <EntityTypeMapping TypeName="agroalimModel.cat_tecnologias">
+              <MappingFragment StoreEntitySet="cat_tecnologias">
+                <ScalarProperty Name="id_cat_tec" ColumnName="id_cat_tec" />
+                <ScalarProperty Name="nombre_tecnologia" ColumnName="nombre_tecnologia" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_tipo_empresas">
+            <EntityTypeMapping TypeName="agroalimModel.cat_tipo_empresas">
+              <MappingFragment StoreEntitySet="cat_tipo_empresas">
+                <ScalarProperty Name="id_cat_te" ColumnName="id_cat_te" />
+                <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_tipo_prod">
+            <EntityTypeMapping TypeName="agroalimModel.cat_tipo_prod">
+              <MappingFragment StoreEntitySet="cat_tipo_prod">
+                <ScalarProperty Name="id_tipo_prod" ColumnName="id_tipo_prod" />
+                <ScalarProperty Name="tipo_producto" ColumnName="tipo_producto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cat_value_drivers">
+            <EntityTypeMapping TypeName="agroalimModel.cat_value_drivers">
+              <MappingFragment StoreEntitySet="cat_value_drivers">
+                <ScalarProperty Name="id_value_divers" ColumnName="id_value_divers" />
+                <ScalarProperty Name="value_driver" ColumnName="value_driver" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="certificaciones_empresas">
+            <EntityTypeMapping TypeName="agroalimModel.certificaciones_empresas">
+              <MappingFragment StoreEntitySet="certificaciones_empresas">
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="fk_id_cert" ColumnName="fk_id_cert" />
+                <ScalarProperty Name="id_cert_emp" ColumnName="id_cert_emp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="coberturas">
+            <EntityTypeMapping TypeName="agroalimModel.coberturas">
+              <MappingFragment StoreEntitySet="coberturas">
+                <ScalarProperty Name="id_cobertura" ColumnName="id_cobertura" />
+                <ScalarProperty Name="nacional" ColumnName="nacional" />
+                <ScalarProperty Name="internacional" ColumnName="internacional" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contactos">
+            <EntityTypeMapping TypeName="agroalimModel.contactos">
+              <MappingFragment StoreEntitySet="contactos">
+                <ScalarProperty Name="fk_id_puesto" ColumnName="fk_id_puesto" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
+                <ScalarProperty Name="id_contacto" ColumnName="id_contacto" />
+                <ScalarProperty Name="estatus_registro" ColumnName="estatus_registro" />
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="direcciones">
+            <EntityTypeMapping TypeName="agroalimModel.direcciones">
+              <MappingFragment StoreEntitySet="direcciones">
+                <ScalarProperty Name="id_direccion" ColumnName="id_direccion" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="municipio" ColumnName="municipio" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="emp_sede">
+            <EntityTypeMapping TypeName="agroalimModel.emp_sede">
+              <MappingFragment StoreEntitySet="emp_sede">
+                <ScalarProperty Name="fk_id_direccion" ColumnName="fk_id_direccion" />
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="fk_id_tipo_sede" ColumnName="fk_id_tipo_sede" />
+                <ScalarProperty Name="id_emp_dir" ColumnName="id_emp_dir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empresas">
+            <EntityTypeMapping TypeName="agroalimModel.empresas">
+              <MappingFragment StoreEntitySet="empresas">
+                <ScalarProperty Name="fk_id_cobertura" ColumnName="fk_id_cobertura" />
+                <ScalarProperty Name="fk_id_estat_empresa" ColumnName="fk_id_estat_empresa" />
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="instagram" ColumnName="instagram" />
+                <ScalarProperty Name="descripcion_oferta_valor" ColumnName="descripcion_oferta_valor" />
+                <ScalarProperty Name="sectores_atendidos" ColumnName="sectores_atendidos" />
+                <ScalarProperty Name="principales_clientes" ColumnName="principales_clientes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="encuestas">
+            <EntityTypeMapping TypeName="agroalimModel.encuestas">
+              <MappingFragment StoreEntitySet="encuestas">
+                <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fk_id_administrador" ColumnName="fk_id_administrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estatificacion_empresa">
+            <EntityTypeMapping TypeName="agroalimModel.estatificacion_empresa">
+              <MappingFragment StoreEntitySet="estatificacion_empresa">
+                <ScalarProperty Name="fk_id_tamano" ColumnName="fk_id_tamano" />
+                <ScalarProperty Name="fk_id_nivel_ventas" ColumnName="fk_id_nivel_ventas" />
+                <ScalarProperty Name="fk_id_detalle_ventas" ColumnName="fk_id_detalle_ventas" />
+                <ScalarProperty Name="fk_id_sector" ColumnName="fk_id_sector" />
+                <ScalarProperty Name="fk_id_tipo_empresa" ColumnName="fk_id_tipo_empresa" />
+                <ScalarProperty Name="id_estat_empresa" ColumnName="id_estat_empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marca_nivel">
+            <EntityTypeMapping TypeName="agroalimModel.marca_nivel">
+              <MappingFragment StoreEntitySet="marca_nivel">
+                <ScalarProperty Name="fk_id_nivel" ColumnName="fk_id_nivel" />
+                <ScalarProperty Name="id_mar_niv" ColumnName="id_mar_niv" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mex_estados">
+            <EntityTypeMapping TypeName="agroalimModel.mex_estados">
+              <MappingFragment StoreEntitySet="mex_estados">
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+                <ScalarProperty Name="nombre_estado" ColumnName="nombre_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="municipios">
+            <EntityTypeMapping TypeName="agroalimModel.municipios">
+              <MappingFragment StoreEntitySet="municipios">
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="nombre_municipio" ColumnName="nombre_municipio" />
+                <ScalarProperty Name="fk_id_estado" ColumnName="fk_id_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opciones">
+            <EntityTypeMapping TypeName="agroalimModel.opciones">
+              <MappingFragment StoreEntitySet="opciones">
+                <ScalarProperty Name="id_opcion" ColumnName="id_opcion" />
+                <ScalarProperty Name="texto" ColumnName="texto" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="fk_id_pregunta" ColumnName="fk_id_pregunta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orgs_emp">
+            <EntityTypeMapping TypeName="agroalimModel.orgs_emp">
+              <MappingFragment StoreEntitySet="orgs_emp">
+                <ScalarProperty Name="fk_id_org" ColumnName="fk_id_org" />
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="id_orgs_emp" ColumnName="id_orgs_emp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="preguntas">
+            <EntityTypeMapping TypeName="agroalimModel.preguntas">
+              <MappingFragment StoreEntitySet="preguntas">
+                <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+                <ScalarProperty Name="pregunta" ColumnName="pregunta" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="fk_id_encuesta" ColumnName="fk_id_encuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prod_vald_ind">
+            <EntityTypeMapping TypeName="agroalimModel.prod_vald_ind">
+              <MappingFragment StoreEntitySet="prod_vald_ind">
+                <ScalarProperty Name="id_prod_vald_ind" ColumnName="id_prod_vald_ind" />
+                <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+                <ScalarProperty Name="value_driver" ColumnName="value_driver" />
+                <ScalarProperty Name="industry_levers" ColumnName="industry_levers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productos">
+            <EntityTypeMapping TypeName="agroalimModel.productos">
+              <MappingFragment StoreEntitySet="productos">
+                <ScalarProperty Name="fk_id_posicionamiento" ColumnName="fk_id_posicionamiento" />
+                <ScalarProperty Name="fk_id_marca_nivelp" ColumnName="fk_id_marca_nivelp" />
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="fk_id_origen" ColumnName="fk_id_origen" />
+                <ScalarProperty Name="fk_id_tecnologia" ColumnName="fk_id_tecnologia" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fk_id_value_drivers" ColumnName="fk_id_value_drivers" />
+                <ScalarProperty Name="fk_industry_levers" ColumnName="fk_industry_levers" />
+                <ScalarProperty Name="caso_exito" ColumnName="caso_exito" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="partnership" ColumnName="partnership" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="ocupado" ColumnName="ocupado" />
+                <ScalarProperty Name="recurso" ColumnName="recurso" />
+                <ScalarProperty Name="lenguajes" ColumnName="lenguajes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="respuestas">
+            <EntityTypeMapping TypeName="agroalimModel.respuestas">
+              <MappingFragment StoreEntitySet="respuestas">
+                <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+                <ScalarProperty Name="fk_id_pregunta" ColumnName="fk_id_pregunta" />
+                <ScalarProperty Name="fk_id_opcion" ColumnName="fk_id_opcion" />
+                <ScalarProperty Name="fk_id_contacto" ColumnName="fk_id_contacto" />
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="fecha_respuesta" ColumnName="fecha_respuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="software_empresa">
+            <EntityTypeMapping TypeName="agroalimModel.software_empresa">
+              <MappingFragment StoreEntitySet="software_empresa">
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="fk_id_sw" ColumnName="fk_id_sw" />
+                <ScalarProperty Name="id_sw_emp" ColumnName="id_sw_emp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="agroalimModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tecnologia_producto">
+            <EntityTypeMapping TypeName="agroalimModel.tecnologia_producto">
+              <MappingFragment StoreEntitySet="tecnologia_producto">
+                <ScalarProperty Name="fk_id_tecnologia" ColumnName="fk_id_tecnologia" />
+                <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+                <ScalarProperty Name="id_tec_prod" ColumnName="id_tec_prod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="solicitudes">
+            <EntityTypeMapping TypeName="agroalimModel.solicitudes">
+              <MappingFragment StoreEntitySet="solicitudes">
+                <ScalarProperty Name="id_solicitud" ColumnName="id_solicitud" />
+                <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+                <ScalarProperty Name="fk_id_contacto" ColumnName="fk_id_contacto" />
+                <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="inicio_periodo" ColumnName="inicio_periodo" />
+                <ScalarProperty Name="fin_periodo" ColumnName="fin_periodo" />
+                <ScalarProperty Name="anotaciones" ColumnName="anotaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

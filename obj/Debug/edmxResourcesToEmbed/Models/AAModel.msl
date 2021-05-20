@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="agroalimModelStoreContainer" CdmEntityContainer="agroalimEntities">
+    <EntitySetMapping Name="administradores">
+      <EntityTypeMapping TypeName="agroalimModel.administradores">
+        <MappingFragment StoreEntitySet="administradores">
+          <ScalarProperty Name="id_administrador" ColumnName="id_administrador" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_certificaciones">
+      <EntityTypeMapping TypeName="agroalimModel.cat_certificaciones">
+        <MappingFragment StoreEntitySet="cat_certificaciones">
+          <ScalarProperty Name="id_cat_cert" ColumnName="id_cat_cert" />
+          <ScalarProperty Name="nombre_cert" ColumnName="nombre_cert" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_detalle_ventas">
+      <EntityTypeMapping TypeName="agroalimModel.cat_detalle_ventas">
+        <MappingFragment StoreEntitySet="cat_detalle_ventas">
+          <ScalarProperty Name="id_det_ven" ColumnName="id_det_ven" />
+          <ScalarProperty Name="tamano_detven" ColumnName="tamano_detven" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_industry_levers">
+      <EntityTypeMapping TypeName="agroalimModel.cat_industry_levers">
+        <MappingFragment StoreEntitySet="cat_industry_levers">
+          <ScalarProperty Name="fk_id_value_drivers" ColumnName="fk_id_value_drivers" />
+          <ScalarProperty Name="id_industry_levers" ColumnName="id_industry_levers" />
+          <ScalarProperty Name="industry_levers" ColumnName="industry_levers" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_nivel_ventas">
+      <EntityTypeMapping TypeName="agroalimModel.cat_nivel_ventas">
+        <MappingFragment StoreEntitySet="cat_nivel_ventas">
+          <ScalarProperty Name="id_niv_ven" ColumnName="id_niv_ven" />
+          <ScalarProperty Name="nivel_ventas" ColumnName="nivel_ventas" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_org_empresarial">
+      <EntityTypeMapping TypeName="agroalimModel.cat_org_empresarial">
+        <MappingFragment StoreEntitySet="cat_org_empresarial">
+          <ScalarProperty Name="id_cat_oe" ColumnName="id_cat_oe" />
+          <ScalarProperty Name="nombre_orgemp" ColumnName="nombre_orgemp" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_paises">
+      <EntityTypeMapping TypeName="agroalimModel.cat_paises">
+        <MappingFragment StoreEntitySet="cat_paises">
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+          <ScalarProperty Name="cod_pais" ColumnName="cod_pais" />
+          <ScalarProperty Name="nombre_pais" ColumnName="nombre_pais" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_partnership">
+      <EntityTypeMapping TypeName="agroalimModel.cat_partnership">
+        <MappingFragment StoreEntitySet="cat_partnership">
+          <ScalarProperty Name="id_cat_part" ColumnName="id_cat_part" />
+          <ScalarProperty Name="nivel_partnership" ColumnName="nivel_partnership" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_posicionamiento">
+      <EntityTypeMapping TypeName="agroalimModel.cat_posicionamiento">
+        <MappingFragment StoreEntitySet="cat_posicionamiento">
+          <ScalarProperty Name="id_cat_pos" ColumnName="id_cat_pos" />
+          <ScalarProperty Name="posicionamiento" ColumnName="posicionamiento" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_puestos">
+      <EntityTypeMapping TypeName="agroalimModel.cat_puestos">
+        <MappingFragment StoreEntitySet="cat_puestos">
+          <ScalarProperty Name="id_puesto" ColumnName="id_puesto" />
+          <ScalarProperty Name="nombre_puesto" ColumnName="nombre_puesto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_sectores">
+      <EntityTypeMapping TypeName="agroalimModel.cat_sectores">
+        <MappingFragment StoreEntitySet="cat_sectores">
+          <ScalarProperty Name="id_cat_sec" ColumnName="id_cat_sec" />
+          <ScalarProperty Name="nombre_sector" ColumnName="nombre_sector" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_sectores_atendidos">
+      <EntityTypeMapping TypeName="agroalimModel.cat_sectores_atendidos">
+        <MappingFragment StoreEntitySet="cat_sectores_atendidos">
+          <ScalarProperty Name="id_cat_sec" ColumnName="id_cat_sec" />
+          <ScalarProperty Name="nombre_sector" ColumnName="nombre_sector" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_sedes">
+      <EntityTypeMapping TypeName="agroalimModel.cat_sedes">
+        <MappingFragment StoreEntitySet="cat_sedes">
+          <ScalarProperty Name="id_cat_sede" ColumnName="id_cat_sede" />
+          <ScalarProperty Name="tipo_sede" ColumnName="tipo_sede" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_softwares">
+      <EntityTypeMapping TypeName="agroalimModel.cat_softwares">
+        <MappingFragment StoreEntitySet="cat_softwares">
+          <ScalarProperty Name="id_cat_sw" ColumnName="id_cat_sw" />
+          <ScalarProperty Name="nombre_sw" ColumnName="nombre_sw" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_tamano_empresas">
+      <EntityTypeMapping TypeName="agroalimModel.cat_tamano_empresas">
+        <MappingFragment StoreEntitySet="cat_tamano_empresas">
+          <ScalarProperty Name="id_tam_emp" ColumnName="id_tam_emp" />
+          <ScalarProperty Name="tamano_empresa" ColumnName="tamano_empresa" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_tecnologias">
+      <EntityTypeMapping TypeName="agroalimModel.cat_tecnologias">
+        <MappingFragment StoreEntitySet="cat_tecnologias">
+          <ScalarProperty Name="id_cat_tec" ColumnName="id_cat_tec" />
+          <ScalarProperty Name="nombre_tecnologia" ColumnName="nombre_tecnologia" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_tipo_empresas">
+      <EntityTypeMapping TypeName="agroalimModel.cat_tipo_empresas">
+        <MappingFragment StoreEntitySet="cat_tipo_empresas">
+          <ScalarProperty Name="id_cat_te" ColumnName="id_cat_te" />
+          <ScalarProperty Name="nombre_tipo" ColumnName="nombre_tipo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_tipo_prod">
+      <EntityTypeMapping TypeName="agroalimModel.cat_tipo_prod">
+        <MappingFragment StoreEntitySet="cat_tipo_prod">
+          <ScalarProperty Name="id_tipo_prod" ColumnName="id_tipo_prod" />
+          <ScalarProperty Name="tipo_producto" ColumnName="tipo_producto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cat_value_drivers">
+      <EntityTypeMapping TypeName="agroalimModel.cat_value_drivers">
+        <MappingFragment StoreEntitySet="cat_value_drivers">
+          <ScalarProperty Name="id_value_divers" ColumnName="id_value_divers" />
+          <ScalarProperty Name="value_driver" ColumnName="value_driver" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="certificaciones_empresas">
+      <EntityTypeMapping TypeName="agroalimModel.certificaciones_empresas">
+        <MappingFragment StoreEntitySet="certificaciones_empresas">
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="fk_id_cert" ColumnName="fk_id_cert" />
+          <ScalarProperty Name="id_cert_emp" ColumnName="id_cert_emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coberturas">
+      <EntityTypeMapping TypeName="agroalimModel.coberturas">
+        <MappingFragment StoreEntitySet="coberturas">
+          <ScalarProperty Name="id_cobertura" ColumnName="id_cobertura" />
+          <ScalarProperty Name="nacional" ColumnName="nacional" />
+          <ScalarProperty Name="internacional" ColumnName="internacional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contactos">
+      <EntityTypeMapping TypeName="agroalimModel.contactos">
+        <MappingFragment StoreEntitySet="contactos">
+          <ScalarProperty Name="fk_id_puesto" ColumnName="fk_id_puesto" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
+          <ScalarProperty Name="id_contacto" ColumnName="id_contacto" />
+          <ScalarProperty Name="estatus_registro" ColumnName="estatus_registro" />
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="direcciones">
+      <EntityTypeMapping TypeName="agroalimModel.direcciones">
+        <MappingFragment StoreEntitySet="direcciones">
+          <ScalarProperty Name="id_direccion" ColumnName="id_direccion" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="municipio" ColumnName="municipio" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emp_sede">
+      <EntityTypeMapping TypeName="agroalimModel.emp_sede">
+        <MappingFragment StoreEntitySet="emp_sede">
+          <ScalarProperty Name="fk_id_direccion" ColumnName="fk_id_direccion" />
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="fk_id_tipo_sede" ColumnName="fk_id_tipo_sede" />
+          <ScalarProperty Name="id_emp_dir" ColumnName="id_emp_dir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresas">
+      <EntityTypeMapping TypeName="agroalimModel.empresas">
+        <MappingFragment StoreEntitySet="empresas">
+          <ScalarProperty Name="fk_id_cobertura" ColumnName="fk_id_cobertura" />
+          <ScalarProperty Name="fk_id_estat_empresa" ColumnName="fk_id_estat_empresa" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+          <ScalarProperty Name="rfc" ColumnName="rfc" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="instagram" ColumnName="instagram" />
+          <ScalarProperty Name="descripcion_oferta_valor" ColumnName="descripcion_oferta_valor" />
+          <ScalarProperty Name="sectores_atendidos" ColumnName="sectores_atendidos" />
+          <ScalarProperty Name="principales_clientes" ColumnName="principales_clientes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="encuestas">
+      <EntityTypeMapping TypeName="agroalimModel.encuestas">
+        <MappingFragment StoreEntitySet="encuestas">
+          <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fk_id_administrador" ColumnName="fk_id_administrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estatificacion_empresa">
+      <EntityTypeMapping TypeName="agroalimModel.estatificacion_empresa">
+        <MappingFragment StoreEntitySet="estatificacion_empresa">
+          <ScalarProperty Name="fk_id_tamano" ColumnName="fk_id_tamano" />
+          <ScalarProperty Name="fk_id_nivel_ventas" ColumnName="fk_id_nivel_ventas" />
+          <ScalarProperty Name="fk_id_detalle_ventas" ColumnName="fk_id_detalle_ventas" />
+          <ScalarProperty Name="fk_id_sector" ColumnName="fk_id_sector" />
+          <ScalarProperty Name="fk_id_tipo_empresa" ColumnName="fk_id_tipo_empresa" />
+          <ScalarProperty Name="id_estat_empresa" ColumnName="id_estat_empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marca_nivel">
+      <EntityTypeMapping TypeName="agroalimModel.marca_nivel">
+        <MappingFragment StoreEntitySet="marca_nivel">
+          <ScalarProperty Name="fk_id_nivel" ColumnName="fk_id_nivel" />
+          <ScalarProperty Name="id_mar_niv" ColumnName="id_mar_niv" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mex_estados">
+      <EntityTypeMapping TypeName="agroalimModel.mex_estados">
+        <MappingFragment StoreEntitySet="mex_estados">
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="nombre_estado" ColumnName="nombre_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="municipios">
+      <EntityTypeMapping TypeName="agroalimModel.municipios">
+        <MappingFragment StoreEntitySet="municipios">
+          <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+          <ScalarProperty Name="nombre_municipio" ColumnName="nombre_municipio" />
+          <ScalarProperty Name="fk_id_estado" ColumnName="fk_id_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="opciones">
+      <EntityTypeMapping TypeName="agroalimModel.opciones">
+        <MappingFragment StoreEntitySet="opciones">
+          <ScalarProperty Name="id_opcion" ColumnName="id_opcion" />
+          <ScalarProperty Name="texto" ColumnName="texto" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="fk_id_pregunta" ColumnName="fk_id_pregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orgs_emp">
+      <EntityTypeMapping TypeName="agroalimModel.orgs_emp">
+        <MappingFragment StoreEntitySet="orgs_emp">
+          <ScalarProperty Name="fk_id_org" ColumnName="fk_id_org" />
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="id_orgs_emp" ColumnName="id_orgs_emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="preguntas">
+      <EntityTypeMapping TypeName="agroalimModel.preguntas">
+        <MappingFragment StoreEntitySet="preguntas">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="pregunta" ColumnName="pregunta" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="fk_id_encuesta" ColumnName="fk_id_encuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prod_vald_ind">
+      <EntityTypeMapping TypeName="agroalimModel.prod_vald_ind">
+        <MappingFragment StoreEntitySet="prod_vald_ind">
+          <ScalarProperty Name="id_prod_vald_ind" ColumnName="id_prod_vald_ind" />
+          <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+          <ScalarProperty Name="value_driver" ColumnName="value_driver" />
+          <ScalarProperty Name="industry_levers" ColumnName="industry_levers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="agroalimModel.productos">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="fk_id_posicionamiento" ColumnName="fk_id_posicionamiento" />
+          <ScalarProperty Name="fk_id_marca_nivelp" ColumnName="fk_id_marca_nivelp" />
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="fk_id_origen" ColumnName="fk_id_origen" />
+          <ScalarProperty Name="fk_id_tecnologia" ColumnName="fk_id_tecnologia" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fk_id_value_drivers" ColumnName="fk_id_value_drivers" />
+          <ScalarProperty Name="fk_industry_levers" ColumnName="fk_industry_levers" />
+          <ScalarProperty Name="caso_exito" ColumnName="caso_exito" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="partnership" ColumnName="partnership" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="ocupado" ColumnName="ocupado" />
+          <ScalarProperty Name="recurso" ColumnName="recurso" />
+          <ScalarProperty Name="lenguajes" ColumnName="lenguajes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respuestas">
+      <EntityTypeMapping TypeName="agroalimModel.respuestas">
+        <MappingFragment StoreEntitySet="respuestas">
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="fk_id_pregunta" ColumnName="fk_id_pregunta" />
+          <ScalarProperty Name="fk_id_opcion" ColumnName="fk_id_opcion" />
+          <ScalarProperty Name="fk_id_contacto" ColumnName="fk_id_contacto" />
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="fecha_respuesta" ColumnName="fecha_respuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="software_empresa">
+      <EntityTypeMapping TypeName="agroalimModel.software_empresa">
+        <MappingFragment StoreEntitySet="software_empresa">
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="fk_id_sw" ColumnName="fk_id_sw" />
+          <ScalarProperty Name="id_sw_emp" ColumnName="id_sw_emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="agroalimModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tecnologia_producto">
+      <EntityTypeMapping TypeName="agroalimModel.tecnologia_producto">
+        <MappingFragment StoreEntitySet="tecnologia_producto">
+          <ScalarProperty Name="fk_id_tecnologia" ColumnName="fk_id_tecnologia" />
+          <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+          <ScalarProperty Name="id_tec_prod" ColumnName="id_tec_prod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="solicitudes">
+      <EntityTypeMapping TypeName="agroalimModel.solicitudes">
+        <MappingFragment StoreEntitySet="solicitudes">
+          <ScalarProperty Name="id_solicitud" ColumnName="id_solicitud" />
+          <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+          <ScalarProperty Name="fk_id_contacto" ColumnName="fk_id_contacto" />
+          <ScalarProperty Name="fk_id_empresa" ColumnName="fk_id_empresa" />
+          <ScalarProperty Name="estatus" ColumnName="estatus" />
+          <ScalarProperty Name="inicio_periodo" ColumnName="inicio_periodo" />
+          <ScalarProperty Name="fin_periodo" ColumnName="fin_periodo" />
+          <ScalarProperty Name="anotaciones" ColumnName="anotaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
