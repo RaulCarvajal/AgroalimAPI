@@ -190,6 +190,7 @@
     <Property Name="estatus_registro" Type="int" />
     <Property Name="fk_id_empresa" Type="int" />
     <Property Name="estado" Type="bit" />
+    <Property Name="fecha_nacimiento" Type="datetime" />
   </EntityType>
   <EntityType Name="direcciones">
     <Key>
@@ -238,8 +239,10 @@
     <Property Name="descripcion" Type="varchar" MaxLength="500" />
     <Property Name="fecha_vigencia" Type="datetime" />
     <Property Name="fecha_registro" Type="datetime" />
-    <Property Name="estatus" Type="int" />
+    <Property Name="estatus" Type="bit" />
     <Property Name="fk_id_administrador" Type="int" />
+    <Property Name="eversion" Type="float" />
+    <Property Name="nombre" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="estatificacion_empresa">
     <Key>
@@ -281,8 +284,8 @@
     </Key>
     <Property Name="id_opcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="texto" Type="varchar" MaxLength="300" />
-    <Property Name="valor" Type="int" />
     <Property Name="fk_id_pregunta" Type="int" />
+    <Property Name="estatus" Type="bit" />
   </EntityType>
   <EntityType Name="orgs_emp">
     <Key>
@@ -299,7 +302,7 @@
     <Property Name="id_pregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="pregunta" Type="varchar" MaxLength="300" />
     <Property Name="fecha_registro" Type="datetime" />
-    <Property Name="estatus" Type="int" />
+    <Property Name="estatus" Type="bit" />
     <Property Name="fk_id_encuesta" Type="int" />
   </EntityType>
   <EntityType Name="prod_vald_ind">
@@ -840,6 +843,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="sp_get_encuestas_table_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_get_preguntas_dash_encuesta_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fkide" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="agroalimModelStoreContainer">
     <EntitySet Name="administradores" EntityType="Self.administradores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="cat_certificaciones" EntityType="Self.cat_certificaciones" Schema="dbo" store:Type="Tables" />

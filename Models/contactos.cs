@@ -26,5 +26,6 @@ namespace AgroalimAPI.Models
         public Nullable<int> estatus_registro { get; set; }
         public Nullable<int> fk_id_empresa { get; set; }
         public Nullable<bool> estado { get; set; }
+        public Nullable<System.DateTime> fecha_nacimiento { get; set; }
     }
 }

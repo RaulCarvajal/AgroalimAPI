@@ -12,6 +12,8 @@ namespace AgroalimAPI.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class agroalimEntities : DbContext
     {
@@ -65,5 +67,24 @@ namespace AgroalimAPI.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tecnologia_producto> tecnologia_producto { get; set; }
         public virtual DbSet<solicitudes> solicitudes { get; set; }
+    
+        public virtual ObjectResult<sp_get_encuestas_table_admin_Result> sp_get_encuestas_table_admin()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_encuestas_table_admin_Result>("sp_get_encuestas_table_admin");
+        }
+    
+        public virtual ObjectResult<sp_get_preguntas_dash_encuesta_admin_Result> sp_get_preguntas_dash_encuesta_admin(Nullable<int> fkide)
+        {
+            var fkideParameter = fkide.HasValue ?
+                new ObjectParameter("fkide", fkide) :
+                new ObjectParameter("fkide", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_preguntas_dash_encuesta_admin_Result>("sp_get_preguntas_dash_encuesta_admin", fkideParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_encuestas_usuario_by_fecregdesc_Result> sp_get_encuestas_usuario_by_fecregdesc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_encuestas_usuario_by_fecregdesc_Result>("sp_get_encuestas_usuario_by_fecregdesc");
+        }
     }
 }

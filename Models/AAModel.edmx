@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="agroalimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="agroalimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="administradores">
           <Key>
             <PropertyRef Name="id_administrador" />
@@ -195,6 +195,7 @@
           <Property Name="estatus_registro" Type="int" />
           <Property Name="fk_id_empresa" Type="int" />
           <Property Name="estado" Type="bit" />
+          <Property Name="fecha_nacimiento" Type="datetime" />
         </EntityType>
         <EntityType Name="direcciones">
           <Key>
@@ -243,8 +244,10 @@
           <Property Name="descripcion" Type="varchar" MaxLength="500" />
           <Property Name="fecha_vigencia" Type="datetime" />
           <Property Name="fecha_registro" Type="datetime" />
-          <Property Name="estatus" Type="int" />
+          <Property Name="estatus" Type="bit" />
           <Property Name="fk_id_administrador" Type="int" />
+          <Property Name="eversion" Type="float" />
+          <Property Name="nombre" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="estatificacion_empresa">
           <Key>
@@ -286,8 +289,8 @@
           </Key>
           <Property Name="id_opcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="texto" Type="varchar" MaxLength="300" />
-          <Property Name="valor" Type="int" />
           <Property Name="fk_id_pregunta" Type="int" />
+          <Property Name="estatus" Type="bit" />
         </EntityType>
         <EntityType Name="orgs_emp">
           <Key>
@@ -304,7 +307,7 @@
           <Property Name="id_pregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pregunta" Type="varchar" MaxLength="300" />
           <Property Name="fecha_registro" Type="datetime" />
-          <Property Name="estatus" Type="int" />
+          <Property Name="estatus" Type="bit" />
           <Property Name="fk_id_encuesta" Type="int" />
         </EntityType>
         <EntityType Name="prod_vald_ind">
@@ -845,6 +848,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="sp_get_encuestas_table_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_get_encuestas_usuario_by_fecregdesc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_get_preguntas_dash_encuesta_admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fkide" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="agroalimModelStoreContainer">
           <EntitySet Name="administradores" EntityType="Self.administradores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cat_certificaciones" EntityType="Self.cat_certificaciones" Schema="dbo" store:Type="Tables" />
@@ -1039,8 +1047,7 @@
             <End Role="tecnologia_producto" EntitySet="tecnologia_producto" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="agroalimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1237,6 +1244,7 @@
           <Property Name="estatus_registro" Type="Int32" />
           <Property Name="fk_id_empresa" Type="Int32" />
           <Property Name="estado" Type="Boolean" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="direcciones">
           <Key>
@@ -1285,8 +1293,10 @@
           <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="fecha_vigencia" Type="DateTime" Precision="3" />
           <Property Name="fecha_registro" Type="DateTime" Precision="3" />
-          <Property Name="estatus" Type="Int32" />
+          <Property Name="estatus" Type="Boolean" />
           <Property Name="fk_id_administrador" Type="Int32" />
+          <Property Name="eversion" Type="Double" />
+          <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="estatificacion_empresa">
           <Key>
@@ -1330,8 +1340,8 @@
           </Key>
           <Property Name="id_opcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="texto" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="valor" Type="Int32" />
           <Property Name="fk_id_pregunta" Type="Int32" />
+          <Property Name="estatus" Type="Boolean" />
         </EntityType>
         <EntityType Name="orgs_emp">
           <Key>
@@ -1348,7 +1358,7 @@
           <Property Name="id_pregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pregunta" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="fecha_registro" Type="DateTime" Precision="3" />
-          <Property Name="estatus" Type="Int32" />
+          <Property Name="estatus" Type="Boolean" />
           <Property Name="fk_id_encuesta" Type="Int32" />
         </EntityType>
         <EntityType Name="prod_vald_ind">
@@ -2082,7 +2092,35 @@
             <End Role="productos" EntitySet="productos" />
             <End Role="tecnologia_producto" EntitySet="tecnologia_producto" />
           </AssociationSet>
+          <FunctionImport Name="sp_get_encuestas_table_admin" ReturnType="Collection(agroalimModel.sp_get_encuestas_table_admin_Result)" />
+          <FunctionImport Name="sp_get_preguntas_dash_encuesta_admin" ReturnType="Collection(agroalimModel.sp_get_preguntas_dash_encuesta_admin_Result)">
+          <Parameter Name="fkide" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_get_encuestas_usuario_by_fecregdesc" ReturnType="Collection(agroalimModel.sp_get_encuestas_usuario_by_fecregdesc_Result)" />
         </EntityContainer>
+        <ComplexType Name="sp_get_encuestas_table_admin_Result">
+          <Property Type="Int32" Name="id_encuesta" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="250" />
+          <Property Type="Double" Name="eversion" Nullable="true" />
+          <Property Type="Boolean" Name="estatus" Nullable="true" />
+          <Property Type="Int32" Name="preguntas" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_registro" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_get_preguntas_dash_encuesta_admin_Result">
+          <Property Type="Int32" Name="id_pregunta" Nullable="false" />
+          <Property Type="String" Name="pregunta" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="fecha_registro" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="estatus" Nullable="true" />
+          <Property Type="String" Name="preguntas" Nullable="true" MaxLength="8000" />
+        </ComplexType>
+        <ComplexType Name="sp_get_encuestas_usuario_by_fecregdesc_Result">
+          <Property Type="Int32" Name="id_encuesta" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="250" />
+          <Property Type="Double" Name="eversion" Nullable="true" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="preguntas" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_vigencia" Nullable="true" Precision="23" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2287,6 +2325,7 @@
           <EntitySetMapping Name="contactos">
             <EntityTypeMapping TypeName="agroalimModel.contactos">
               <MappingFragment StoreEntitySet="contactos">
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
                 <ScalarProperty Name="fk_id_puesto" ColumnName="fk_id_puesto" />
                 <ScalarProperty Name="nombres" ColumnName="nombres" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />
@@ -2347,6 +2386,8 @@
           <EntitySetMapping Name="encuestas">
             <EntityTypeMapping TypeName="agroalimModel.encuestas">
               <MappingFragment StoreEntitySet="encuestas">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="eversion" ColumnName="eversion" />
                 <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
@@ -2397,9 +2438,9 @@
           <EntitySetMapping Name="opciones">
             <EntityTypeMapping TypeName="agroalimModel.opciones">
               <MappingFragment StoreEntitySet="opciones">
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="id_opcion" ColumnName="id_opcion" />
                 <ScalarProperty Name="texto" ColumnName="texto" />
-                <ScalarProperty Name="valor" ColumnName="valor" />
                 <ScalarProperty Name="fk_id_pregunta" ColumnName="fk_id_pregunta" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2513,6 +2554,41 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_encuestas_table_admin" FunctionName="agroalimModel.Store.sp_get_encuestas_table_admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="agroalimModel.sp_get_encuestas_table_admin_Result">
+                <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="eversion" ColumnName="eversion" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="preguntas" ColumnName="preguntas" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_preguntas_dash_encuesta_admin" FunctionName="agroalimModel.Store.sp_get_preguntas_dash_encuesta_admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="agroalimModel.sp_get_preguntas_dash_encuesta_admin_Result">
+                <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+                <ScalarProperty Name="pregunta" ColumnName="pregunta" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="preguntas" ColumnName="preguntas" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_encuestas_usuario_by_fecregdesc" FunctionName="agroalimModel.Store.sp_get_encuestas_usuario_by_fecregdesc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="agroalimModel.sp_get_encuestas_usuario_by_fecregdesc_Result">
+                <ScalarProperty Name="id_encuesta" ColumnName="id_encuesta" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="eversion" ColumnName="eversion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="preguntas" ColumnName="preguntas" />
+                <ScalarProperty Name="fecha_vigencia" ColumnName="fecha_vigencia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -17,7 +17,7 @@ namespace AgroalimAPI.Models
         public int id_pregunta { get; set; }
         public string pregunta { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
-        public Nullable<int> estatus { get; set; }
+        public Nullable<bool> estatus { get; set; }
         public Nullable<int> fk_id_encuesta { get; set; }
     }
 }

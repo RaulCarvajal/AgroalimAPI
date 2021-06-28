@@ -10,46 +10,46 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using AgroalimAPI.Models;
 
-namespace AgroalimAPI.Controllers.Catalogos
+namespace AgroalimAPI.Controllers.Opciones
 {
-    public class cat_puestosController : ApiController
+    public class admin_opcionesController : ApiController
     {
         private agroalimEntities db = new agroalimEntities();
 
-        // GET: api/cat_puestos
-        public IQueryable<cat_puestos> Getcat_puestos()
+        // GET: api/admin_opciones/:fkidp POR PREGUNTA
+        public IQueryable<opciones> Getopciones(int id)
         {
-            return db.cat_puestos;
+            return db.opciones.Where( a => a.fk_id_pregunta == id);
         }
 
-        // GET: api/cat_puestos/5
-        [ResponseType(typeof(cat_puestos))]
-        public IHttpActionResult Getcat_puestos(int id)
+        // GET: api/admin_opciones/5
+        /*[ResponseType(typeof(opciones))]
+        public IHttpActionResult Getopciones(int id)
         {
-            cat_puestos cat_puestos = db.cat_puestos.Find(id);
-            if (cat_puestos == null)
+            opciones opciones = db.opciones.Find(id);
+            if (opciones == null)
             {
                 return NotFound();
             }
 
-            return Ok(cat_puestos);
-        }
+            return Ok(opciones);
+        }*/
 
-        // PUT: api/cat_puestos/5
+        // PUT: api/admin_opciones/5 
         [ResponseType(typeof(void))]
-        public IHttpActionResult Putcat_puestos(int id, cat_puestos cat_puestos)
+        public IHttpActionResult Putopciones(int id, opciones opciones)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != cat_puestos.id_puesto)
+            if (id != opciones.id_opcion)
             {
                 return BadRequest();
             }
 
-            db.Entry(cat_puestos).State = EntityState.Modified;
+            db.Entry(opciones).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace AgroalimAPI.Controllers.Catalogos
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!cat_puestosExists(id))
+                if (!opcionesExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace AgroalimAPI.Controllers.Catalogos
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/cat_puestos
-        [ResponseType(typeof(cat_puestos))]
-        public IHttpActionResult Postcat_puestos(cat_puestos cat_puestos)
+        // POST: api/admin_opciones
+        [ResponseType(typeof(opciones))]
+        public IHttpActionResult Postopciones(opciones opciones)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.cat_puestos.Add(cat_puestos);
+            db.opciones.Add(opciones);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = cat_puestos.id_puesto }, cat_puestos);
+            return CreatedAtRoute("DefaultApi", new { id = opciones.id_opcion }, opciones);
         }
 
-        // DELETE: api/cat_puestos/5
-        [ResponseType(typeof(cat_puestos))]
-        public IHttpActionResult Deletecat_puestos(int id)
+        // DELETE: api/admin_opciones/5
+        [ResponseType(typeof(opciones))]
+        public IHttpActionResult Deleteopciones(int id)
         {
-            cat_puestos cat_puestos = db.cat_puestos.Find(id);
-            if (cat_puestos == null)
+            opciones opciones = db.opciones.Find(id);
+            if (opciones == null)
             {
                 return NotFound();
             }
 
-            db.cat_puestos.Remove(cat_puestos);
+            db.opciones.Remove(opciones);
             db.SaveChanges();
 
-            return Ok(cat_puestos);
+            return Ok(opciones);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,9 +110,9 @@ namespace AgroalimAPI.Controllers.Catalogos
             base.Dispose(disposing);
         }
 
-        private bool cat_puestosExists(int id)
+        private bool opcionesExists(int id)
         {
-            return db.cat_puestos.Count(e => e.id_puesto == id) > 0;
+            return db.opciones.Count(e => e.id_opcion == id) > 0;
         }
     }
 }

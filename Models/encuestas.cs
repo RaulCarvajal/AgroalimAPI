@@ -18,7 +18,9 @@ namespace AgroalimAPI.Models
         public string descripcion { get; set; }
         public Nullable<System.DateTime> fecha_vigencia { get; set; }
         public Nullable<System.DateTime> fecha_registro { get; set; }
-        public Nullable<int> estatus { get; set; }
+        public Nullable<bool> estatus { get; set; }
         public Nullable<int> fk_id_administrador { get; set; }
+        public Nullable<double> eversion { get; set; }
+        public string nombre { get; set; }
     }
 }

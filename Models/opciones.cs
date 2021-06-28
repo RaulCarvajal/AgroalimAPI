@@ -16,7 +16,7 @@ namespace AgroalimAPI.Models
     {
         public int id_opcion { get; set; }
         public string texto { get; set; }
-        public Nullable<int> valor { get; set; }
         public Nullable<int> fk_id_pregunta { get; set; }
+        public Nullable<bool> estatus { get; set; }
     }
 }
